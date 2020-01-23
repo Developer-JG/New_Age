@@ -95,6 +95,33 @@ class Player:
 
             print(f"레벨 : {self.liv}")
 
+    # 장착보기
+    def atk_def_inventory(self):
+        if len(self.equipment['atk']) == 2:
+            print(f"무기 : {self.equipment['atk'][1].name}")
+        else:
+            print(f"무기 : {self.equipment['atk'][0]}")
+
+        if len(self.equipment['def_1']) == 2:
+            print(f"갑옷_투구 : {self.equipment['def_1'][1].name}")
+        else:
+            print(f"갑옷_투구 : {self.equipment['def_1'][0]}")
+
+        if len(self.equipment['def_2']) == 2:
+            print(f"갑옷_갑옷 : {self.equipment['def_2'][1].name}")
+        else:
+            print(f"갑옷_갑옷 : {self.equipment['def_2'][0]}")
+
+        if len(self.equipment['def_3']) == 2:
+            print(f"갑옷_바지 : {self.equipment['def_3'][1].name}")
+        else:
+            print(f"갑옷_바지 : {self.equipment['def_3'][0]}")
+
+        if len(self.equipment['def_4']) == 2:
+            print(f"갑옷_신발 : {self.equipment['def_4'][1].name}")
+        else:
+            print(f"갑옷_신발 : {self.equipment['def_4'][0]}")
+
 
 # 흰색 (노말) 무기 아이템 클래스
 class W_atk_item:
@@ -548,65 +575,236 @@ class monster:
 
 
 # 1월의 기억 드랍
-nomal_monster_ = monster("화난닭",0,1,2,0,0,0,1, )
+nomal_monster_0001 = monster("화난닭",0,1,2,0,0,0,1, )
 
-nomal_monster_ = monster("화난닭",0,1,2,0,0,0,1, )
-nomal_monster_ = monster("돌돌이",1,25,8,0,1,1,2, )
-nomal_monster_ = monster("돌순이",2,35,20,0,1,1,3, )
-nomal_monster_ = monster("돌멍이",3,60,35,5,2,2,4, )
-nomal_monster_ = monster("돌전사",6,150,75,7,4,3,7, )
-nomal_monster_ = monster("왕돌이",6,1500,500,50,200,200,7, )
+nomal_monster_0101 = monster("화난닭",0,1,2,0,0,0,1, )
+nomal_monster_0102 = monster("돌돌이",1,25,8,0,1,1,2, )
+nomal_monster_0103 = monster("돌순이",2,35,20,0,1,1,3, )
+nomal_monster_0104 = monster("돌멍이",3,60,35,5,2,2,4, )
+nomal_monster_0105 = monster("돌전사",6,150,75,7,4,3,7, )
+nomal_monster_0106 = monster("왕돌이",6,1500,500,50,200,200,7, )
 
-nomal_monster_ = monster("화난소",0,300,100,100,15,0,0, )
-nomal_monster_ = monster("핀 그리드",0,15000,2500,4000,3000,1000,0, ) # 렉스의 1번째 명작 '홍염의 날개깃' 드랍
+nomal_monster_0002 = monster("화난소",0,300,100,100,15,0,0, )
+nomal_monster_0003 = monster("핀 그리드",0,15000,2500,4000,3000,1000,0, ) # 렉스의 1번째 명작 '홍염의 날개깃' 드랍
 
-nomal_monster_ = monster("오염된 슬라임 요정",6,160,60,8,6,5,7, )
-nomal_monster_ = monster("오염된 뼈슬라임",7,200,80,10,7,5,8, )
-nomal_monster_ = monster("오염된 하늘슬라임",8,250,85,13,8,5,9, )
-nomal_monster_ = monster("오염된 키다리 슬라임",8,240,125,12,7,5,9, )
-nomal_monster_ = monster("사악한 마녀",9,2000,300,100,250,2000,10, )
+nomal_monster_0201 = monster("오염된 슬라임 요정",6,160,60,8,6,5,7, )
+nomal_monster_0202 = monster("오염된 뼈슬라임",7,200,80,10,7,5,8, )
+nomal_monster_0203 = monster("오염된 하늘슬라임",8,250,85,13,8,5,9, )
+nomal_monster_0204 = monster("오염된 키다리 슬라임",8,240,125,12,7,5,9, )
+nomal_monster_0205 = monster("사악한 마녀",9,2000,300,100,250,2000,10, )
 
 # 2월의 기억 드랍
-nomal_monster_ = monster("어설픈 해적앵무새",9,260,95,13,10,7,1, )
-nomal_monster_ = monster("어설픈 해적 조무래기",10,280,115,14,11,7,2, )
-nomal_monster_ = monster("어설픈 해적 견습생",11,300,120,15,12,7,3, )
-nomal_monster_ = monster("어설픈 해적",12,325,145,16,13,7,4, )
-nomal_monster_ = monster("어설픈 해적선장",13,4000,500,300,250,4000,4, )
+nomal_monster_0301 = monster("어설픈 해적앵무새",9,260,95,13,10,7,1, )
+nomal_monster_0302 = monster("어설픈 해적 조무래기",10,280,115,14,11,7,2, )
+nomal_monster_0303 = monster("어설픈 해적 견습생",11,300,120,15,12,7,3, )
+nomal_monster_0304 = monster("어설픈 해적",12,325,145,16,13,7,4, )
+nomal_monster_0305 = monster("어설픈 해적선장",13,4000,500,300,250,4000,4, )
 
-nomal_monster_ = monster("파란 위습",13,375,170,17,15,10,4, )
-nomal_monster_ = monster("초록 위습",14,400,190,18,16,10,5, )
+nomal_monster_0401 = monster("파란 위습",13,375,170,17,15,10,4, )
+nomal_monster_0402 = monster("초록 위습",14,400,190,18,16,10,5, )
 
-nomal_monster_ = monster("엘프 전사 견습생",15,450,220,20,17,12,7, )
-nomal_monster_ = monster("엘프 전사",16,500,250,22,18,14,8, )
-nomal_monster_ = monster("엘프 여왕",17,8000,700,500,300,7000,10, )
+nomal_monster_0501 = monster("엘프 전사 견습생",15,450,220,20,17,12,7, )
+nomal_monster_0502 = monster("엘프 전사",16,500,250,22,18,14,8, )
+nomal_monster_0503 = monster("엘프 여왕",17,8000,700,500,300,7000,10, )
 
 # 3월의 기억 드랍
-nomal_monster_ = monster("감염된 여성",18,550,280,24,20,16,1, )
-nomal_monster_ = monster("감염된 남성",19,650,300,28,21,18,2, )
-nomal_monster_ = monster("거대 바이러스 골렘",20,10000,1200,800,300,15000,3, )
+nomal_monster_0601 = monster("감염된 여성",18,550,280,24,20,16,1, )
+nomal_monster_0602 = monster("감염된 남성",19,650,300,28,21,18,2, )
+nomal_monster_0603 = monster("거대 바이러스 골렘",20,10000,1200,800,500,15000,3, )
 
-nomal_monster_ = monster("초보 드워프",,,,,,,, )
-nomal_monster_ = monster("붉은 드워프",,,,,,,, )
-nomal_monster_ = monster("땅꼬마 드워프",,,,,,,, )
-nomal_monster_ = monster("덩치 드워프",,,,,,,, )
-nomal_monster_ = monster("드워프 왕",,,,,,,, )
+nomal_monster_0701 = monster("초보 드워프",20,720,400,40,34,30,5, )
+nomal_monster_0702 = monster("붉은 드워프",21,800,450,44,40,35,6, )
+nomal_monster_0703 = monster("땅꼬마 드워프",22,880,500,48,46,40,7, )
+nomal_monster_0704 = monster("덩치 드워프",23,960,550,52,52,45,8, )
+nomal_monster_0705 = monster("드워프 왕",24,15000,1600,1000,800,50,10, )
 
-nomal_monster_ = monster("인어 견습 전사",,,,,,,, )
-nomal_monster_ = monster("인어 전사",,,,,,,, )
-nomal_monster_ = monster("인어 베테랑 전사",,,,,,,, )
-nomal_monster_ = monster("인어 전사장",,,,,,,, )
-nomal_monster_ = monster("인어 대장",,,,,,,, )
+# 4월의 기억 드랍
+nomal_monster_0801 = monster("인어 견습 전사",24,1000,600,60,70,60,1, )
+nomal_monster_0802 = monster("인어 전사",25,1100,650,70,80,70,2, )
+nomal_monster_0803 = monster("인어 베테랑 전사",26,1200,700,80,90,80,3, )
+nomal_monster_0804 = monster("인어 전사장",27,1300,750,90,100,90,4, )
+nomal_monster_0805 = monster("인어 대장",28,18000,2000,1200,1000,1000,5, )
 
-nomal_monster_ = monster("아기 거미",,,,,,,, )
-nomal_monster_ = monster("거미 전사",,,,,,,, )
-nomal_monster_ = monster("거미 마법사",,,,,,,, )
-nomal_monster_ = monster("거미 대장",,,,,,,, )
-nomal_monster_ = monster("거미 여왕",,,,,,,, )
+nomal_monster_0901 = monster("아기 거미",28,1450,800,100,110,100,6, )
+nomal_monster_0902 = monster("거미 전사",29,1600,900,120,130,110,7, )
+nomal_monster_0903 = monster("거미 마법사",30,1750,1000,140,150,120,8, )
+nomal_monster_0904 = monster("거미 대장",31,1900,1100,160,170,130,9, )
+nomal_monster_0905 = monster("거미 여왕",32,23000,3000,1500,1300,1400,10, )
 
-nomal_monster_ = monster("허약한 선녀",,,,,,,, )
-nomal_monster_ = monster("가녀린 선녀",,,,,,,, )
-nomal_monster_ = monster("길쭉한 선녀",,,,,,,, )
-nomal_monster_ = monster("키가 작은 선녀",,,,,,,, )
+# 5월의 기억 드랍
+nomal_monster_1001 = monster("허약한 선녀",32,2100,1300,180,190,150,1, )
+nomal_monster_1002 = monster("가녀린 선녀",33,2300,1450,210,220,170,2, )
+nomal_monster_1003 = monster("길쭉한 선녀",34,2500,1600,240,250,190,3, )
+nomal_monster_1004 = monster("키가 작은 선녀",35,2700,1750,260,270,210,4, )
+
+monster_month_1_list = [nomal_monster_0001, nomal_monster_0002, nomal_monster_0003, \
+                        nomal_monster_0101, nomal_monster_0102, nomal_monster_0103, nomal_monster_0104, nomal_monster_0105, nomal_monster_0106, \
+                        nomal_monster_0201, nomal_monster_0202, nomal_monster_0203, nomal_monster_0204, nomal_monster_0205]
+
+monster_month_2_list = [nomal_monster_0301, nomal_monster_0302, nomal_monster_0303, nomal_monster_0304, nomal_monster_0305, \
+                        nomal_monster_0401, nomal_monster_0402, \
+                        nomal_monster_0501, nomal_monster_0502, nomal_monster_0503]
+
+monster_month_3_list = [nomal_monster_0601, nomal_monster_0602, nomal_monster_0603, \
+                        nomal_monster_0701, nomal_monster_0702, nomal_monster_0703, nomal_monster_0704, nomal_monster_0705]
+
+monster_month_4_list = [nomal_monster_0801, nomal_monster_0802, nomal_monster_0803, nomal_monster_0804, nomal_monster_0805, \
+                        nomal_monster_0901, nomal_monster_0902, nomal_monster_0903, nomal_monster_0904, nomal_monster_0905]
+
+monster_month_5_list = [nomal_monster_1001, nomal_monster_1002, nomal_monster_1003, nomal_monster_1004]
+
+mon_dict = []
+
+# 몬스터 프린트
+def print_mon(mon):
+    print("\n\n{0:=^25}".format("Lv." + str(mon.liv) + "_" + mon.name))
+    print("{0} : {1}\n{2} : {3}\n{4} : {5}".format( \
+        '이름', mon.name, \
+        '체력', mon.health, \
+        '공격력', mon.damage))
+
+
+# 몬스터 고르기
+def monster_sel(player_1):
+    while True:
+        per = choice(list(mon_dict.keys()))
+        if per == player_1.point:
+            mon = choice(list(mon_dict[per]))
+            return mon
+            break
+        else:
+            continue
+
+#공격
+def attack(player_1, mon, mon_health, player_or_monster):
+    if player_or_monster == "player":
+        if len(player_1.equipment['atk']) == 2:
+            per = choice("y" * player_1.critical + "n" * (100 - player_1.critical))
+            if per == 'y':
+                damage = player_1.damage * 2
+            else:
+                damage = player_1.damage
+            mon_health -= damage
+            print("{0}에게 {1} 데미지를 입혔습니다\n".format(mon.name, damage))
+            return mon_health
+        elif len(pl.equipment['atk']) == 1:
+            print("{0}에게 0 데미지를 입혔습니다\n".format(mon.name))
+            return mon_health
+    elif player_or_monster == "monster":
+        def_amount = 0
+        if len(player_1.equipment['def_1']) == 2:
+            def_amount = int({self.equipment['def_1'][1].defense}) + def_amount
+        if len(player_1.equipment['def_2']) == 2:
+            def_amount = int({self.equipment['def_2'][1].defense}) + def_amount
+        if len(player_1.equipment['def_3']) == 2:
+            def_amount = int({self.equipment['def_3'][1].defense}) + def_amount
+        if len(player_1.equipment['def_4']) == 2:
+            def_amount = int({self.equipment['def_4'][1].defense}) + def_amount
+        damage = mon.damage - def_amount
+        if damage <= 0:
+            damage = 0
+        player_1.health -= damage
+        print("{0} 데미지를 받았습니다\n".format(damage))
+        return player_1.health
+
+# 몬스터 출현
+def monster_hello(move, self):
+    if move == 'w' or move == 'a' or move == 's' or move == 'd':
+        # 몬스터 등장
+        while True:
+            per = choice("m" * 80 + "n" * 20)
+            if per == "m":
+                mon = monster_sel(self)
+                print("\n야생의 {0}이(가) 나타났다\n".format(mon.name))
+                turn = 1
+                r_count = 0
+                # 전투
+                while True:
+                    print("\n\n{0:_^30}\n".format("Round" + str(turn)))
+                    print_mon(mon)
+                    print('\n{0:=^25}\n'.format("Vs"))
+                    self.m_showinfo()
+                    if r_count == 0:
+                        ans = input("\n공격(q) 아이템(w) 도망(e)\n:")
+                        # 공격
+                        if ans == 'q':
+                            mon.health = attack(self,mon,monster.health,'player')
+                            
+                            if m_health <= 0:
+                                self.exp += mon.liv
+                                self.mon_kill += 1
+                                print("{0}가 죽었습니다".format(mon.name))
+                                print("\n돈 {0}를 얻었습니다".format(mon.drop_money))
+                                self.money += mon.drop_money
+                                if len(mon.drop_item) == 0:
+                                    pass
+                                else:
+                                    for i in mon.drop_item:
+                                        per_2 = choice('y' * 60 + 'n' * 40)
+                                        if per_2 == 'y':
+                                            if mon.drop_item in self.inven["drop"]:
+                                                num = self.inven["drop"].index(mon.drop_item)
+                                                self.inven["drop"][num].count += 1
+                                                print(f"{i.name}을 얻었습니다")
+                                            else:
+                                                print(f"{i.name}을 얻었습니다")
+                                                self.inven["drop"].append(i)
+                                        elif per_2 == 'n':
+                                            pass
+                                    print("\n\n")
+                                return self
+                            attack(self, mon, m_health, "mon")
+                            if self.health <= 0:
+                                break
+                            turn += 1
+                        # 아이템
+                        elif sel == 'w':
+                            inventory(self)
+                        # 도망
+                        elif sel == 'e':
+                            r_count = 1
+                            per_3 = pl_run(mon, 5)
+                            if per_3 == 'r':
+                                print("도망에 성공하였다")
+                                input("(enter)")
+                                break
+                            elif per_3 == 'n':
+                                r_count = 5
+                                pass
+                        else:
+                            print("올바른 문자를 입력하세요")
+                    # 도망 X
+                    else:
+                        sel = input("\n공격(q) 아이템(w)\n:")
+                        # 공격
+                        if sel == 'q':
+                            attack(self, m_health, mon, "pl")
+                            if m_health <= 0:
+                                print("{0}가 죽었습니다".format(mon.name))
+                                print("돈 {0}를 얻었습니다".format(mon.drop_money))
+                                self.money += mon.drop_money
+                                if len(mon.drop_item) == 0:
+                                    pass
+                                else:
+                                    for i in mon.drop_item:
+                                        per_2 = choice('y' * 60 + 'n' * 40)
+                                        if per_2 == 'y':
+                                            self.inven.append(i)
+                                        elif per_2 == 'n':
+                                            pass
+                                return self
+                            attack(self, mon, m_health, "mon")
+                            if self.health <= 0:
+                                break
+                            turn += 1
+                        # 아이템
+                        elif sel == 'w':
+                            inventory(self)
+                        r_count -= 1
+            elif per == "n":
+                break
+            break
+
 
 # 아이템 정보 프린트
 def print_item_1(item):
@@ -689,44 +887,6 @@ def inventory_print(self, ans):
             break
         else:
             print("올바른 숫자를 입력하세요")
-
-
-# 장착보기
-def atk_def_inventory(item):
-    if len(self.equipment['atk']) == 2:
-        print(f"무기 : {self.equipment['atk'][1].name}")
-    else:
-        print(f"무기 : {self.equipment['atk'][0]}")
-
-    if len(self.equipment['def_1']) == 2:
-        print(f"갑옷_투구 : {self.equipment['def_1'][1].name}")
-    else:
-        print(f"갑옷_투구 : {self.equipment['def_1'][0]}")
-
-    if len(self.equipment['def_2']) == 2:
-        print(f"갑옷_갑옷 : {self.equipment['def_2'][1].name}")
-    else:
-        print(f"갑옷_갑옷 : {self.equipment['def_2'][0]}")
-
-    if len(self.equipment['def_3']) == 2:
-        print(f"갑옷_바지 : {self.equipment['def_3'][1].name}")
-    else:
-        print(f"갑옷_바지 : {self.equipment['def_3'][0]}")
-
-    if len(self.equipment['def_4']) == 2:
-        print(f"갑옷_신발 : {self.equipment['def_4'][1].name}")
-    else:
-        print(f"갑옷_신발 : {self.equipment['def_4'][0]}")
-
-
-# 몬스터 프린트
-def print_mon(mon, health):
-    print("\n\n{0:=^25}".format("Lv." + str(mon.liv) + "_" + mon.name))
-    print("{0} : {1}\n{2} : {3}\n{4} : {5}".format( \
-        '이름', mon.name, \
-        '체력', health, \
-        '공격력', mon.damage))
-
 
 # 스텟
 def level_up(self):
@@ -858,7 +1018,7 @@ def change_7(me, word, num):
             return me.recovery
 def change_8(player_1):
     if player_1.point == 1:
-        return '에나'
+        return '에나중심'
     else:
         return ' - '
 
@@ -969,6 +1129,10 @@ def main():
             if plag > 15:
                 if move_count != 0:
                     print("최대 활동범위는 1~100,1~100 입니다.")
+
+            if move_count == 0:
+                if player_1.point != :
+                    monster_hello(ans, self)
 
         elif ans == "e":
             inventory(self)
