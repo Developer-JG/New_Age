@@ -65,25 +65,25 @@ January
 31 New_Age (v.36) (1.3)
 
 February
-1일 map plan_4 (1)
-1일 map plan_5 (1.3)
-2일 map plan_6 (3)
-2일 New_Age (v.37) (1.1)
-3일 New_Age (v.38) (1)
-3일 New_Age (v.39) (1)
-4일 New_Age (v.40) (0.5)
-6일 Quest making_1 (0.5)
-6일 New_Age (v.41) (0.2)
-7일 New_Age (v.42) (0.5)
-7일 Quest making_2 (0.1)
-7일 New_Age (v.43) (0.5)
-8일 New_Age (v.44) (0.5)
-8일 New_Age (v.44_1) (0.3)
-12일 New_Age (v.45) (1.1)
-26일 rename Git Hub (0.2)
+01 map plan_4 (1)
+01 map plan_5 (1.3)
+02 map plan_6 (3)
+02 New_Age (v.37) (1.1)
+03 New_Age (v.38) (1)
+03 New_Age (v.39) (1)
+04 New_Age (v.40) (0.5)
+06 Quest making_1 (0.5)
+06 New_Age (v.41) (0.2)
+07 New_Age (v.42) (0.5)
+07 Quest making_2 (0.1)
+07 New_Age (v.43) (0.5)
+08 New_Age (v.44) (0.5)
+08 New_Age (v.44_1) (0.3)
+12 New_Age (v.45) (1.1)
+26 rename Git Hub (0.2)
 
 May
-31일 restart (New_Age (v.46)) (1)
+31 restart (New_Age (v.46)) (1)
 ```
 
 # Licence
