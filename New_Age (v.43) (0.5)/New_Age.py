@@ -104,7 +104,7 @@ class Player:
 
     # 장착보기
     def atk_def_inventory(self):
-        if len(self.['atk']) == 2:
+        if len(self.equipment['atk']) == 2:
             print(f"무기 : {self.equipment['atk'][1].name}")
         else:
             print(f"무기 : {self.equipment['atk'][0]}")
@@ -147,7 +147,7 @@ class W_atk_item:
 
 # 보라색 (에픽) 무기 아이템 클래스
 class P_atk_item:
-    def __init__ (self, name, damage, liv, critical, physical_absorption, use)
+    def __init__ (self, name, damage, liv, critical, physical_absorption, use):
         self.name = name
         self.damage = damage
         self.liv = liv
@@ -223,7 +223,7 @@ class W_def_item:
 
 # 보라색 (에픽) 방어구 아이템 클래스
 class  P_def_item:
-    def __init__ (self, name, defense, liv, part, need_power_stats, need_agility_stats, need_adventure_stats, use)
+    def __init__ (self, name, defense, liv, part, need_power_stats, need_agility_stats, need_adventure_stats, use):
         self.name = name
         self.defense = defense
         self.liv = liv
@@ -315,7 +315,7 @@ class nomal_item_shop:
 W_atk_item_101 = W_atk_item("검", 2, 15, 1, 0, 0, 0, 0, 0, "atk")
 W_atk_item_102 = W_atk_item("몽둥아", 2, 15, 1, 0, 0, 0, 0, 0, "atk")
 W_atk_item_103 = W_atk_item("철검", 13, 30, 5, 0, 0, 0, 0, 0, "atk")
-W_atk_item_104 = W_atk_item("도끼", 13, 30,, 5, 0, 0, 0, 0, 0, "atk")
+W_atk_item_104 = W_atk_item("도끼", 13, 30, 5, 0, 0, 0, 0, 0, "atk")
 W_atk_item_105 = W_atk_item("예리한 대검", 30, 65, 10, 0, 0, 0, 0, 0, "atk")
 W_atk_item_106 = W_atk_item("예리한 도끼", 30, 65, 10, 0, 0, 0, 0, 0, "atk")
 # 2월의 기억으로 구매
@@ -341,6 +341,8 @@ W_atk_item_402 = W_atk_item("금빛 하늘검", 160, 50, 40, 120, 0, 45, 0, 0,"a
 W_atk_item_403 = W_atk_item("자연의 일부", 144, 50, 40, 60, 0, 60, 0, 144,"atk")  # 60 : 0 : 60 +체력흡수 144
 
 
+W_def_item_001 = W_def_item("가죽 갑옷",1,0,2,1,0,0,0,0,0,0,"def")
+W_def_item_001 = W_def_item("가죽 신발",1,0,4,1,0,0,0,0,0,0,"def")
 # 1월의 기억으로 구매
 W_def_item_111 = W_def_item("녹슨 철 투구",5,15,1,10,0,0,0,0,0,0,"def")
 W_def_item_112 = W_def_item("녹슨 철 갑옷",5,15,2,10,0,0,0,0,0,0,"def")
@@ -484,18 +486,18 @@ g_e_atk_item_01 = g_e_atk_item("세번째 아이 '트리아'",30000,100,5000,"at
 g_e_atk_item_02 = g_e_atk_item("첫번째 아이 '에나'",30000,100,5000,"atk")
 
 
-# 강화서
-fortification_item_101 = fortification_item("하급 무기강화", 200000, "+ 3~18 데미지 (레벨 제한 3)")
-fortification_item_201 = fortification_item("중급 무기강화", 200000, "+ 3~27 데미지 (레벨 제한 4)")
-fortification_item_202 = fortification_item("고급 무기강화", 600000, "+ 18~27 데미지 (레벨 제한 5)")
-fortification_item_203 = fortification_item("힘 강화", 200000, "+ 3~9 데미지 (힘 스텟 제한 20")
-fortification_item_204 = fortification_item("민첩 강화", 200000, "크리티컬 + 3~5% (민첩 스텟 제한 20)")
-fortification_item_205 = fortification_item("모험 강화", 200000, "체력흡수 + 16~39 (모험 스텟 제한 20)")
-fortification_item_206 = fortification_item("방어구 강화", 600000, "+ 3~18 방어력 (레벨 제한 10)")
-fortification_item_301 = fortification_item("저주받은 공격력 강화", 2000000, "+ 200 데미지 (체력 흡수 -50)")
-fortification_item_302 = fortification_item("저주받은 크티티컬 강화", 2000000, "크리티컬 + 8% (체력 흡수 -50)")
-fortification_item_303 = fortification_item("저주받은 방어구 강화", 2000000, "체력증가 + 500 (방어력 -50)")
-fortification_item_401 = fortification_item("어둠의 강화", 1000000, "+ 25 데미 (레벨 제한 55)")
+# 강화서 (개척자의 증표로 구매)
+fortification_item_101 = fortification_item("하급 무기강화", 1, "+ 3~18 데미지 (레벨 제한 3)")
+fortification_item_201 = fortification_item("중급 무기강화", 1, "+ 3~27 데미지 (레벨 제한 4)")
+fortification_item_202 = fortification_item("고급 무기강화", 3, "+ 18~27 데미지 (레벨 제한 5)")
+fortification_item_203 = fortification_item("힘 강화", 1, "+ 3~9 데미지 (힘 스텟 제한 20")
+fortification_item_204 = fortification_item("민첩 강화", 1, "크리티컬 + 3~5% (민첩 스텟 제한 20)")
+fortification_item_205 = fortification_item("모험 강화", 1, "체력흡수 + 16~39 (모험 스텟 제한 20)")
+fortification_item_206 = fortification_item("방어구 강화", 3, "+ 3~18 방어력 (레벨 제한 10)")
+fortification_item_301 = fortification_item("저주받은 공격력 강화", 10, "+ 200 데미지 (체력 흡수 -50)")
+fortification_item_302 = fortification_item("저주받은 크티티컬 강화", 10, "크리티컬 + 8% (체력 흡수 -50)")
+fortification_item_303 = fortification_item("저주받은 방어구 강화", 10, "체력증가 + 500 (방어력 -50)")
+fortification_item_401 = fortification_item("어둠의 강화", 5, "+ 25 데미 (레벨 제한 55)")
 
 
 # 회복의 돌
@@ -519,6 +521,8 @@ month_item_09 = nomal_item("9월의 기억", 1, "nomal")
 month_item_10 = nomal_item("10월의 기억", 1, "nomal")
 month_item_11 = nomal_item("11월의 기억", 1, "nomal")
 
+nomal_item_00 = nomal_item("개척자의 증표", 1, "nomal")
+
 
 
 W_atk_item_list = [W_atk_item_101, W_atk_item_102, W_atk_item_103, W_atk_item_104, W_atk_item_105, W_atk_item_106, \
@@ -528,7 +532,7 @@ W_atk_item_list = [W_atk_item_101, W_atk_item_102, W_atk_item_103, W_atk_item_10
                    W_atk_item_401, W_atk_item_402, W_atk_item_403]
 
 W_atk_item_list_1 = [W_atk_item_101, W_atk_item_102, W_atk_item_103, W_atk_item_104, W_atk_item_105, W_atk_item_106]
-W_atk_item_list_2 = [W_atk_item_201, W_atk_item_202, W_atk_item_203, W_atk_item_204, W_atk_item_205, W_atk_item_206, W_atk_item_207, W_atk_item_208, W_atk_item_209]
+W_atk_item_list_2 = [W_atk_item_201, W_atk_item_202, W_atk_item_204, W_atk_item_205, W_atk_item_206, W_atk_item_207, W_atk_item_209]
 W_atk_item_list_3 = [W_atk_item_301, W_atk_item_302, W_atk_item_303, W_atk_item_304, W_atk_item_305, W_atk_item_306]
 W_atk_item_list_4 = [W_atk_item_401, W_atk_item_402, W_atk_item_403]
 
@@ -582,67 +586,70 @@ class monster:
 
 
 # 1월의 기억 드랍
-nomal_monster_0001 = monster("화난닭",0,1,2,0,0,0,[month_item_01],1, )
+nomal_monster_0001 = monster("화난닭",0,1,2,0,0,0,[month_item_01],1,66)
 
-nomal_monster_0101 = monster("화난닭",0,1,2,0,0,0,[month_item_01],1, )
-nomal_monster_0102 = monster("돌돌이",1,25,8,0,1,1,[month_item_01],2, )
-nomal_monster_0103 = monster("돌순이",2,35,20,0,1,1,[month_item_01],3, )
-nomal_monster_0104 = monster("돌멍이",3,60,35,5,2,2,[month_item_01],4, )
-nomal_monster_0105 = monster("돌전사",6,150,75,7,4,3,[month_item_01],5, )
-nomal_monster_0106 = monster("왕돌이",6,1500,500,50,200,200,[month_item_01],6, )
+nomal_monster_0101 = monster("화난닭",0,1,2,0,0,0,[month_item_01],1,32)
+nomal_monster_0102 = monster("돌돌이",1,25,8,0,1,1,[month_item_01],2,32)
+nomal_monster_0103 = monster("돌순이",2,35,20,0,1,1,[month_item_01],3,32)
+nomal_monster_0104 = monster("돌멍이",3,60,35,5,2,2,[month_item_01],4,32)
+nomal_monster_0105 = monster("돌전사",6,150,75,7,4,3,[month_item_01],5,32)
+nomal_monster_0106 = monster("왕돌이",6,1500,500,50,200,200,[month_item_01],6,32)
 
-nomal_monster_0002 = monster("화난소",0,300,100,100,15,0,[],0, )
-nomal_monster_0003 = monster("핀 그리드",0,15000,2500,4000,3000,1000,[],0, ) # 렉스의 1번째 명작 '홍염의 날개깃' 드랍
+nomal_monster_0002 = monster("화난소",0,300,100,100,15,0,[],0,1)
+nomal_monster_0003 = monster("핀 그리드",0,15000,2500,4000,3000,1000,[R_atk_item_601],1,1) # 렉스의 1번째 명작 '홍염의 날개깃' 드랍 / 중복 x
 
-nomal_monster_0201 = monster("오염된 슬라임 요정",6,160,60,8,6,5,[month_item_01],6, )
-nomal_monster_0202 = monster("오염된 뼈슬라임",7,200,80,10,7,5,[month_item_01],7, )
-nomal_monster_0203 = monster("오염된 하늘슬라임",8,250,85,13,8,5,[month_item_01],8, )
-nomal_monster_0204 = monster("오염된 키다리 슬라임",8,240,125,12,7,5,[month_item_01],9, )
-nomal_monster_0205 = monster("사악한 마녀",9,2000,300,100,250,2000,[month_item_01],10, )
+nomal_monster_0201 = monster("오염된 슬라임 요정",6,160,60,8,6,5,[month_item_01],6,4)
+nomal_monster_0202 = monster("오염된 뼈슬라임",7,200,80,10,7,5,[month_item_01],7,4)
+nomal_monster_0203 = monster("오염된 하늘슬라임",8,250,85,13,8,5,[month_item_01],8,4)
+nomal_monster_0204 = monster("오염된 키다리 슬라임",8,240,125,12,7,5,[month_item_01],9,4)
+nomal_monster_0205 = monster("사악한 마녀",9,2000,300,100,250,2000,[month_item_01],10,4)
 
 # 2월의 기억 드랍
-nomal_monster_0301 = monster("어설픈 해적앵무새",9,260,95,13,10,7,[month_item_02],1, )
-nomal_monster_0302 = monster("어설픈 해적 조무래기",10,280,115,14,11,7,[month_item_02],2, )
-nomal_monster_0303 = monster("어설픈 해적 견습생",11,300,120,15,12,7,[month_item_02],3, )
-nomal_monster_0304 = monster("어설픈 해적",12,325,145,16,13,7,[month_item_02],4, )
-nomal_monster_0305 = monster("어설픈 해적선장",13,4000,500,300,250,4000,[month_item_02],4, )
+nomal_monster_0301 = monster("어설픈 해적앵무새",9,260,95,13,10,7,[month_item_02],1,7)
+nomal_monster_0302 = monster("어설픈 해적 조무래기",10,280,115,14,11,7,[month_item_02],2,7)
+nomal_monster_0303 = monster("어설픈 해적 견습생",11,300,120,15,12,7,[month_item_02],3,7)
+nomal_monster_0304 = monster("어설픈 해적",12,325,145,16,13,7,[month_item_02],4,6)
+nomal_monster_0305 = monster("어설픈 해적선장",13,4000,500,300,250,4000,[month_item_02],4,6)
 
 nomal_monster_0401 = monster("파란 위습",13,375,170,17,15,10,[month_item_02],5, )
 nomal_monster_0402 = monster("초록 위습",14,400,190,18,16,10,[month_item_02],6, )
 
-nomal_monster_0501 = monster("엘프 전사 견습생",15,450,220,20,17,12,[month_item_02],7, )
-nomal_monster_0502 = monster("엘프 전사",16,500,250,22,18,14,[month_item_02],8, )
-nomal_monster_0503 = monster("엘프 여왕",17,8000,700,500,300,7000,[month_item_02],10, )
+nomal_monster_0501 = monster("엘프 전사 견습생",15,450,220,20,17,12,[month_item_02],7,15)
+nomal_monster_0502 = monster("엘프 전사",16,500,250,22,18,14,[month_item_02],8,15)
+nomal_monster_0503 = monster("엘프 여왕",17,8000,700,500,300,7000,[month_item_02],10,15)
 
 # 3월의 기억 드랍
-nomal_monster_0601 = monster("감염된 여성",18,550,280,24,20,16,[month_item_03],1, )
-nomal_monster_0602 = monster("감염된 남성",19,650,300,28,21,18,[month_item_03],2, )
-nomal_monster_0603 = monster("거대 바이러스 골렘",20,10000,1200,800,500,15000,[month_item_03],3, )
+nomal_monster_0601 = monster("감염된 여성",18,550,280,24,20,16,[month_item_03],1,10)
+nomal_monster_0602 = monster("감염된 남성",19,650,300,28,21,18,[month_item_03],2,10)
+nomal_monster_0603 = monster("거대 바이러스 골렘",20,10000,1200,800,500,15000,[month_item_03],3,10)
 
-nomal_monster_0701 = monster("초보 드워프",20,720,400,40,34,30,[month_item_03],5, )
-nomal_monster_0702 = monster("붉은 드워프",21,800,450,44,40,35,[month_item_03],6, )
-nomal_monster_0703 = monster("땅꼬마 드워프",22,880,500,48,46,40,[month_item_03],7, )
-nomal_monster_0704 = monster("덩치 드워프",23,960,550,52,52,45,[month_item_03],8, )
-nomal_monster_0705 = monster("드워프 왕",24,15000,1600,1000,800,50,[month_item_03],10, )
+nomal_monster_0701 = monster("초보 드워프",20,720,400,40,34,30,[month_item_03],5,14)
+nomal_monster_0702 = monster("붉은 드워프",21,800,450,44,40,35,[month_item_03],6,14)
+nomal_monster_0703 = monster("땅꼬마 드워프",22,880,500,48,46,40,[month_item_03],7,14)
+nomal_monster_0704 = monster("덩치 드워프",23,960,550,52,52,45,[month_item_03],8,14)
+nomal_monster_0705 = monster("드워프 왕",24,15000,1600,1000,800,50,[month_item_03],10,14)
 
 # 4월의 기억 드랍
-nomal_monster_0801 = monster("인어 견습 전사",24,1000,600,60,70,60,[month_item_04],1, )
-nomal_monster_0802 = monster("인어 전사",25,1100,650,70,80,70,[month_item_04],2, )
-nomal_monster_0803 = monster("인어 베테랑 전사",26,1200,700,80,90,80,[month_item_04],3, )
-nomal_monster_0804 = monster("인어 전사장",27,1300,750,90,100,90,[month_item_04],4, )
-nomal_monster_0805 = monster("인어 대장",28,18000,2000,1200,1000,1000,[month_item_04],5, )
+nomal_monster_0801 = monster("인어 견습 전사",24,1000,600,60,70,60,[month_item_04],1,12)
+nomal_monster_0802 = monster("인어 전사",25,1100,650,70,80,70,[month_item_04],2,12)
+nomal_monster_0803 = monster("인어 베테랑 전사",26,1200,700,80,90,80,[month_item_04],3,12)
+nomal_monster_0804 = monster("인어 전사장",27,1300,750,90,100,90,[month_item_04],4,12)
+nomal_monster_0805 = monster("인어 대장",28,18000,2000,1200,1000,1000,[month_item_04],5,12)
 
-nomal_monster_0901 = monster("아기 거미",28,1450,800,100,110,100,[month_item_04],6, )
-nomal_monster_0902 = monster("거미 전사",29,1600,900,120,130,110,[month_item_04],7, )
-nomal_monster_0903 = monster("거미 마법사",30,1750,1000,140,150,120,[month_item_04],8, )
-nomal_monster_0904 = monster("거미 대장",31,1900,1100,160,170,130,[month_item_04],9, )
-nomal_monster_0905 = monster("거미 여왕",32,23000,3000,1500,1300,1400,[month_item_04],10, )
+nomal_monster_0901 = monster("아기 거미",28,1450,800,100,110,100,[month_item_04],6,25)
+nomal_monster_0902 = monster("거미 전사",29,1600,900,120,130,110,[month_item_04],7,25)
+nomal_monster_0903 = monster("거미 마법사",30,1750,1000,140,150,120,[month_item_04],8,25)
+nomal_monster_0904 = monster("거미 대장",31,1900,1100,160,170,130,[month_item_04],9,25)
+nomal_monster_0905 = monster("거미 여왕",32,23000,3000,1500,1300,1400,[month_item_04],10,25)
 
 # 5월의 기억 드랍
-nomal_monster_1001 = monster("허약한 선녀",32,2100,1300,180,190,150,[month_item_05],1, )
-nomal_monster_1002 = monster("가녀린 선녀",33,2300,1450,210,220,170,[month_item_05],2, )
-nomal_monster_1003 = monster("길쭉한 선녀",34,2500,1600,240,250,190,[month_item_05],3, )
-nomal_monster_1004 = monster("키가 작은 선녀",35,2700,1750,260,270,210,[month_item_05],4, )
+nomal_monster_1001 = monster("허약한 선녀",32,2100,1300,180,190,150,[month_item_05],1,8)
+nomal_monster_1002 = monster("가녀린 선녀",33,2300,1450,210,220,170,[month_item_05],2,8)
+nomal_monster_1003 = monster("길쭉한 선녀",34,2500,1600,240,250,190,[month_item_05],3,8)
+nomal_monster_1004 = monster("키가 작은 선녀",35,2700,1750,260,270,210,[month_item_05],4,8)
+
+# 이벤트 및 특수
+special_monster_0004 = monster("인내의 돌")
 
 monster_month_1_list = [nomal_monster_0001, nomal_monster_0002, nomal_monster_0003, \
                         nomal_monster_0101, nomal_monster_0102, nomal_monster_0103, nomal_monster_0104, nomal_monster_0105, nomal_monster_0106, \
@@ -795,7 +802,7 @@ def monster_hello(move, self):
 
 
 # 아이템 정보 프린트
-def print_item_1(item):
+def print_item_1 (item):
     if item.use == 'atk':
         print("{0:^25}{1:^10}{2:^10}".format( \
             '이름', item.name, \
@@ -811,17 +818,13 @@ def print_item_1(item):
             '이름', item.name, \
             '체력 회복량', item.recovery)
 
-def print_item_2(item):
+def print_item_2 (item):
     if item.use == 'atk':
-        print("{0} : {1}\n{2} : {3}\n{4} : {5}\n{6} : {7}\n{8} : {9}".format( \
+        print("{0} : {1}\n{2} : {3}\n{4} : {5}\n{6} : {7}".format( \
             '이름', item.name, \
             '공격력', item.damage, \
             '가격', item.cost, \
             '제한레벨', item.liv))
-
-        need_power_stats = 0
-        need_agility_stats = 0
-        need_adventure_stats = 0
 
         if item.need_power_stats in globals()
             need_power_stats == item.need_power_stats
@@ -1254,7 +1257,7 @@ def change_8(self): # 구역 : 36 / 지역 : 24 / 바다   성 : 1, 2, 3, 5, 19,
     elif self.point == 63:
         return '물거품의 바다'
     elif self.point == 64:
-        return '고대 우적의 섬'
+        return '고대 유적의 섬'
     elif self.point == 65:
         return '개척자의 섬'
     elif self.point == 66:
@@ -1531,11 +1534,149 @@ def turn_chack(self, player_x, player_y, plag):
                 point_count += 1
         if 31 <= player_x <= 32:
             if 74 <= player_y <= 76:
-                self.point ==
+                self.point == 30
                 point_count += 1
         if 31 <= player_x <= 33:
             if 46 <= player_y <= 47:
-                self.point ==
+                self.point == 31
+                point_count += 1
+        if 3 <= player_x <= 8:
+            if 33 <= player_y <= 38:
+                self.point == 32
+                point_count += 1
+        if 14 <= player_x <= 16:
+            if 25 <= player_y <= 26:
+                self.point == 33
+                point_count += 1
+        if 16 <= player_x <= 18:
+            if 14 <= player_y <= 15:
+                self.point == 34
+                point_count += 1
+        if 9 <= player_x <= 11:
+            if 49 <= player_y <= 51:
+                self.point == 35
+                point_count += 1
+        if 49 <= player_x <= 51:
+            if 94 <= player_y <= 96:
+                self.point == 36
+                point_count += 1
+
+    if point_count == 0:
+        if 77 <= player_x <= 93:
+            if 46 <= player_y <= 62:
+                self.point == 50
+                point_count += 1
+        if 77 <= player_x <= 87:
+            if 63 <= player_y <= 73:
+                self.point == 51
+                point_count += 1
+        if 68 <= player_x <= 76:
+            if 75 <= player_y <= 83:
+                self.point == 52
+                point_count += 1
+        if 88 <= player_x <= 98:
+            if 63 <= player_y <= 73:
+                self.point == 53
+                point_count += 1
+        if 64 <= player_x <= 76:
+            if 36 <= player_y <= 48:
+                self.point == 54
+                point_count += 1
+        if 66 <= player_x <= 76:
+            if 49 <= player_y <= 59:
+                self.point == 55
+                point_count += 1
+        if 62 <= player_x <= 76:
+            if 60 <= player_y <= 74:
+                self.point == 56
+                point_count += 1
+        if 58 <= player_x <= 59:
+            if 61 <= player_y <= 63:
+                self.point == 56
+                point_count += 1
+        if 60 <= player_x <= 61:
+            if 62 <= player_y <= 65:
+                self.point == 56
+                point_count += 1
+        if 57 <= player_x <= 67:
+            if 75 <= player_y <= 85:
+                self.point == 57
+                point_count += 1
+        if 77 <= player_x <= 88:
+            if 74 <= player_y <= 84:
+                self.point == 58
+                point_count += 1
+        if 18 <= player_x <= 32:
+            if  <= player_y <= :
+                self.point == 59
+                point_count += 1
+        if 18 <= player_x <= 36:
+            if  <= player_y <= :
+                self.point == 60
+                point_count += 1
+        if 37 <= player_x <= 51:
+            if  <= player_y <= :
+                self.point == 61
+                point_count += 1
+        if 37 <= player_x <= 53:
+            if  <= player_y <= :
+                self.point == 62
+                point_count += 1
+        if 54 <= player_x <= 55:
+            if  <= player_y <= :
+                self.point == 62
+                point_count += 1
+        if 56 <= player_x <= 57:
+            if  <= player_y <= :
+                self.point == 62
+                point_count += 1
+        if 43 <= player_x <= 53:
+            if  <= player_y <= :
+                self.point == 63
+                point_count += 1
+        if 2 <= player_x <= 16:
+            if 25 <= player_y <= 39:
+                self.point == 64
+                point_count += 1
+        if 23 <= player_x <= 29:
+            if 19 <= player_y <= 25:
+                self.point == 65
+                point_count += 1
+        if 16 <= player_x <= 22:
+            if 9 <= player_y <= 15:
+                self.point == 66
+                point_count += 1
+        if 44 <= player_x <= 48:
+            if 26 <= player_y <= 20:
+                self.point == 67
+                point_count += 1
+        if 44 <= player_x <= 48:
+            if 11 <= player_y <= 15:
+                self.point == 68
+                point_count += 1
+        if 49 <= player_x <= 55:
+            if 13 <= player_y <= 19:
+                self.point == 69
+                point_count += 1
+        if 6 <= player_x <= 12:
+            if 87 <= player_y <= :
+                self.point == 70
+                point_count += 1
+        if 8 <= player_x <= 12:
+            if 82 <= player_y <= :
+                self.point == 71
+                point_count += 1
+        if 47 <= player_x <= 51:
+            if 93 <= player_y <= :
+                self.point == 72
+                point_count += 1
+        if 47 <= player_x <= 53:
+            if 84 <= player_y <= :
+                self.point == 73
+                point_count += 1
+        if 43 <= player_x <= 45:
+            if 78 <= player_y <= :
+                self.point == 74
                 point_count += 1
 
 # 게임 종료
@@ -1683,5 +1824,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# https://cafe.naver.com/bjcrocodile/3275675

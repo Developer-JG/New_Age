@@ -4,6 +4,9 @@ import time
 
 print("\nthe New_Age (basilisk) game project\n")
 
+higt_health = 60
+
+
 # 스토리
 def story():
     print("오래전 이땅은 인간의 것이 아니었다.")
@@ -209,7 +212,7 @@ class g_e_atk_item:
 # 흰색 (노말) 방어구 아이템 클래스
 class W_def_item:
     def __init__(self, name, defense, cost, part, liv, need_power_stats, need_agility_stats, need_adventure_stats,
-                 plus_power_stats, plus_agility_stats, physical_absorption, use):
+                 plus_power_stats, plus_agility_stats, plus_health, use):
         self.name = name
         self.defense = defense
         self.cost = cost
@@ -220,7 +223,7 @@ class W_def_item:
         self.need_adventure_stats = need_adventure_stats
         self.plus_power_stats = plus_power_stats
         self.plus_agility_stats = plus_agility_stats
-        self.physical_absorption = physical_absorption
+        self.plus_health = plus_health
         self.use = use
 
 
@@ -932,124 +935,49 @@ def re_use(self, use, item, ans):
         print_item_2(item[ans])
         ans_1 = input("\n{0}을(를) 사용하시겟습니까? (y / n) : ".format(item[ans].name))
         if ans_1 == "y":
-            recovery = change_7(item[ans], use, 1)
+            tem = qw(item[sel], use, 1)
             if use == 're':
-                self.health += recovery
-            item[ans].count -= 1
-            if item[ans].count <= 0:
-                del item[ans]
+                self.health += tem
+            elif use == 'food':
+                self.hunger += tem
+            item[sel].count -= 1
+            if item[sel].count <= 0:
+                del item[sel]
             return self
-        elif ans_1 == "n":
+        elif sel_1 == "n":
             break
         else:
             print("올바른 문자를 입력하세요")
 
-# 무기 장착
-def equipment(self, use, item, ans):
-while True:
-    print_item_2(item[ans])
-    ans_1 = input("\n{0} 무기를 장착하시겟습니까? (y / n) : ".format(item[ans].name))
-    if ans_1 == "y":
-        if item.need_power_stats >= po_count:
-            if item.need_agility_stats >= ag_count:
-                if item.need_adventure_stats >= ad_count:
-                    use = change(item[ans])
-                    if len(self.equipment[use]) == 2:
-                        self.inven[use].append(player_1.equipment[use][1])
-                        if use == 'atk':
-                            self.damage -= item.damage
-                            if item.critical in globals():
-                                for i in range(item.critical):
-                                    self.critical -= 1
-                            if item.physical_absorption in globals():
-                                for i in range(item.physical_absorption):
-                                    self.health -= 1
-                        if use == 'def':
-                            self.damage -= item.damage
-                            if item.plus_power_stats in globals():
-                                for i in range(item.plus_power_stats):
-                                    self.damage -= 0.5
-                                    ad_count -= 1
-                            if item.plus_agility_stats in globals():
-                                for i in range(item.plus_agility_stats):
-                                    self.critical -= 1
-                                    ag_count -= 1
-                            if item.plus_adventure_stats in globals():
-                                for i in range(item.plus_adventure_stats):
-                                    self.health -= 6
-                                    ad_count -= 1
-                            if item.physical_absorption in globals():
-                                for i in range(item.physical_absorption):
-                                    self.health -= 1
-
-                        del self.equipment[use][1]
-                        self.equipment[use].append(item[ans])
-                        del item[ans]
-                        if use == 'atk':
-                            self.damage += item.damage
-                            if item.critical in globals():
-                                for i in range(item.critical):
-                                    self.critical += 1
-                            if item.physical_absorption in globals():
-                                for i in range(item.physical_absorption):
-                                    self.health += 1
-                        if use == 'def':
-                            self.damage += item.damage
-                            if item.plus_power_stats in globals():
-                                for i in range(item.plus_power_stats):
-                                    self.damage += 0.5
-                                    ad_count += 1
-                            if item.plus_agility_stats in globals():
-                                for i in range(item.plus_agility_stats):
-                                    self.critical += 1
-                                    ag_count += 1
-                            if item.plus_adventure_stats in globals():
-                                for i in range(item.plus_adventure_stats):
-                                    self.health += 6
-                                    ad_count += 1
-                            if item.physical_absorption in globals():
-                                for i in range(item.physical_absorption):
-                                    self.health += 1
-                        print("\n{0} 무기를 장착하였습니다: ".format(self.equipment[use][1].name))
-                        input("나가려면(enter)")
-                        return self
-                        break
-                    elif len(self.equipment[use]) == 1:
-                        self.equipment[use].append(item[ans])
-                        if use == 'atk':
-                            self.damage += item.damage
-                            if item.critical in globals():
-                                for i in range(item.critical):
-                                    self.critical += 1
-                            if item.physical_absorption in globals():
-                                for i in range(item.physical_absorption):
-                                    self.health += 1
-                        if use == 'def':
-                            self.damage += item.damage
-                            if item.plus_power_stats in globals():
-                                for i in range(item.plus_power_stats):
-                                    self.damage += 0.5
-                                    ad_count += 1
-                            if item.plus_agility_stats in globals():
-                                for i in range(item.plus_agility_stats):
-                                    self.critical += 1
-                                    ag_count += 1
-                            if item.plus_adventure_stats in globals():
-                                for i in range(item.plus_adventure_stats):
-                                    self.health += 6
-                                    ad_count += 1
-                            if item.physical_absorption in globals():
-                                for i in range(item.physical_absorption):
-                                    self.health += 1
-                        del item[ans]
-                        print("\n{0} 무기를 장착하였습니다: ".format(self.equipment[use][1].name))
-                        input("나가려면(enter)")
-                        return self
-                        break
-    elif ans_1 == "n":
-        break
-    else:
-        print("올바른 문자를 입력하세요")
+    # 무기 장착
+    # def equipment(self, use, item, ans):
+    while True:
+        print_item_2(item[ans])
+        ans_1 = input("\n{0} 무기를 장착하시겟습니까? (y / n) : ".format(item[ans].name))
+        if ans_1 == "y":
+            if len(self.equipment[use]) == 2:
+                self.inven[use].append(pl.equipment[use][1])
+                reset_info(self, self.equipment[use][1], 'd', use)
+                del self.equipment[use][1]
+                self.equipment[use].append(item[ans])
+                del item[ans]
+                reset_info(self, self.equipment[use][1], 'u', use)
+                print("\n{0} 무기를 장착하였습니다: ".format(self.equipment[use][1].name))
+                input("나가려면(enter)")
+                return self
+                break
+            elif len(self.equipment[use]) == 1:
+                self.equipment[use].append(item[ans])
+                reset_info(self, self.equipment[use][1], 'u', use)
+                del item[ans]
+                print("\n{0} 무기를 장착하였습니다: ".format(self.equipment[use][1].name))
+                input("나가려면(enter)")
+                return self
+                break
+        elif ans_1 == "n":
+            break
+        else:
+            print("올바른 문자를 입력하세요")
 
 
 # 인벤토리
@@ -1167,8 +1095,8 @@ def showshop(self):
                         print_item_2(sel_list[sel_item])
                         print("=" * 26)
                         print("\n{나의 돈 {0}, 나의 레벨 {1}}\n{나의 스텟 (힘, 민첩, 모험) : {2}/{3}/{4}\n".format(self.money, self.liv,
-                                                                                                   po_count, a_count,
-                                                                                                   ad_count))
+                                                                                                   h_count, a_count,
+                                                                                                   c_count))
                         ans = input("구매하시겠습니까 (y / n) : ")
                         if ans == "y":
                             buyshop(self, ch, shop_item_list[use])
@@ -1185,6 +1113,21 @@ def showshop(self):
         else:
             print("올바른 문자를 입력하세요")
             continue
+
+    # 아이템별 스탯변화
+    # def reset_info(pl, item, u_d, use):
+    if use == 'atk':
+        if u_d == 'd':
+            pl.damage -= int(item.damage + (item.damage * pl.ak / 100))
+        elif u_d == 'u':
+            pl.damage += int(item.damage + (item.damage * pl.ak / 100))
+        return pl.damage
+    elif use == 'def':
+        if u_d == 'd':
+            pl.defense -= item.defense
+        elif u_d == 'u':
+            pl.defense += item.defense
+        return pl.defense
 
 
 # 글씨 바꾸기
@@ -1254,13 +1197,13 @@ def change_6(item, word):
         return item.defense
 
 
-def change_7(item, word, num):
+def change_7(me, word, num):
     if num == 0:
         if word == 're':
-            return item.health
+            return me.health
     elif num == 1:
         if word == 're':
-            return item.recovery
+            return me.recovery
 
 
 def change_8(self):  # 구역 : 36 / 지역 : 24 / 바다   성 : 1, 2, 3, 5, 19, 22, 28, 36
@@ -1390,19 +1333,6 @@ def change_8(self):  # 구역 : 36 / 지역 : 24 / 바다   성 : 1, 2, 3, 5, 19
     else:
         return '바다'
 
-def change_9(item):
-    if item.use == 'atk':
-        return 'atk'
-    else item.use == 'def':
-        if item.part == '1':
-            return 'def_1'
-        elif item.part == '2':
-            return 'def_2'
-        elif item.part == '3':
-            return 'def_3'
-        elif item.part == '4':
-            return 'def_4'
-
 
 # 스텟
 def level_up(self):
@@ -1420,7 +1350,7 @@ def level_up(self):
         print("{0:=^25}".format(" 스텟 "))
         print("1 힘 스텟 {0}\
             \n2 민첩 스텟 {1}\
-            \n3 모험 스텟 {2}".format(po_count, a_count, ad_count))
+            \n3 모험 스텟 {2}".format(h_count, a_count, c_count))
 
         num = input(":")
         if num == '1':
@@ -1430,13 +1360,13 @@ def level_up(self):
             if ans == 'y':
                 self.damage += 0.5
                 print("공격력 0.5가 추가 됩니다")
-                po_count += 1
+                h_count += 1
                 break
             elif ans == 'n':
                 continue
 
         elif num == '2':
-            if ag_count == 20:
+            if a_count == 20:
                 continue
             print("{0:=^25}".format(" 민첩 스텟 "))
             print("스텟 1당 크리티컬 확률이 0.1% 증가합니다.")
@@ -1444,13 +1374,13 @@ def level_up(self):
             if ans == 'y':
                 self.critical += 1
                 print("크리티컬 확률 0.1%가 추가 됩니다")
-                ag_count += 1
+                a_count += 1
                 break
             elif sel == 'n':
                 continue
 
         elif num == '3':
-            if ad_count == 20:
+            if c_count == 20:
                 continue
             print("{0:=^25}".format(" 모험 스텟 "))
             print("스텟 1당 체력이 6 증가합니다.")
@@ -1458,7 +1388,7 @@ def level_up(self):
             if sel == 'y':
                 self.health += 6
                 print("체력이 6 추가 됩니다.")
-                ad_count += 1
+                c_count += 1
                 break
             elif sel == 'n':
                 continue
@@ -1836,10 +1766,6 @@ def main():
             player_name = input("플레이어 이름을 입력하십시오. = ")
         player_1 = Player(player_name, 1.1, [], [], 60, 0, 0, 0, 0, 50, 0, 0)
 
-        po_count = 0
-        ag_count = 0
-        ad_count = 0
-
         player_x = 87
         player_y = 52
 
@@ -1865,13 +1791,10 @@ def main():
             player_1.health = player_1.health + 50
 
         # 체력,허기 최대치
-        if player_1.health > player_1.health:
-            player_1.health = player_1.health
+        if player_1.health > higt_health:
+            player_1.health = higt_health
 
         player_1.showinfo()
-
-        print("{0} : {1}/{2}/{3}".format( \
-            '나의스텟 (힘, 민첩, 모험)', po_count, ag_count, ad_count))
 
         print("나의 위치 (" + change_8(player_1) + ") : " + str(player_x) + "," + str(player_y))
 
@@ -1955,5 +1878,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# https://cafe.naver.com/bjcrocodile/3275675

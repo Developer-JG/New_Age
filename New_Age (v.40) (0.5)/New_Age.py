@@ -104,7 +104,7 @@ class Player:
 
     # 장착보기
     def atk_def_inventory(self):
-        if len(self.['atk']) == 2:
+        if len(self.equipment['atk']) == 2:
             print(f"무기 : {self.equipment['atk'][1].name}")
         else:
             print(f"무기 : {self.equipment['atk'][0]}")
@@ -147,7 +147,7 @@ class W_atk_item:
 
 # 보라색 (에픽) 무기 아이템 클래스
 class P_atk_item:
-    def __init__ (self, name, damage, liv, critical, physical_absorption, use)
+    def __init__ (self, name, damage, liv, critical, physical_absorption, use):
         self.name = name
         self.damage = damage
         self.liv = liv
@@ -223,7 +223,7 @@ class W_def_item:
 
 # 보라색 (에픽) 방어구 아이템 클래스
 class  P_def_item:
-    def __init__ (self, name, defense, liv, part, need_power_stats, need_agility_stats, need_adventure_stats, use)
+    def __init__ (self, name, defense, liv, part, need_power_stats, need_agility_stats, need_adventure_stats, use):
         self.name = name
         self.defense = defense
         self.liv = liv
@@ -315,7 +315,7 @@ class nomal_item_shop:
 W_atk_item_101 = W_atk_item("검", 2, 15, 1, 0, 0, 0, 0, 0, "atk")
 W_atk_item_102 = W_atk_item("몽둥아", 2, 15, 1, 0, 0, 0, 0, 0, "atk")
 W_atk_item_103 = W_atk_item("철검", 13, 30, 5, 0, 0, 0, 0, 0, "atk")
-W_atk_item_104 = W_atk_item("도끼", 13, 30,, 5, 0, 0, 0, 0, 0, "atk")
+W_atk_item_104 = W_atk_item("도끼", 13, 30, 5, 0, 0, 0, 0, 0, "atk")
 W_atk_item_105 = W_atk_item("예리한 대검", 30, 65, 10, 0, 0, 0, 0, 0, "atk")
 W_atk_item_106 = W_atk_item("예리한 도끼", 30, 65, 10, 0, 0, 0, 0, 0, "atk")
 # 2월의 기억으로 구매
@@ -795,7 +795,7 @@ def monster_hello(move, self):
 
 
 # 아이템 정보 프린트
-def print_item_1(item):
+def print_item_1 (item):
     if item.use == 'atk':
         print("{0:^25}{1:^10}{2:^10}".format( \
             '이름', item.name, \
@@ -811,9 +811,9 @@ def print_item_1(item):
             '이름', item.name, \
             '체력 회복량', item.recovery)
 
-def print_item_2(item):
+def print_item_2 (item):
     if item.use == 'atk':
-        print("{0} : {1}\n{2} : {3}\n{4} : {5}\n{6} : {7}\n{8} : {9}".format( \
+        print("{0} : {1}\n{2} : {3}\n{4} : {5}\n{6} : {7}".format( \
             '이름', item.name, \
             '공격력', item.damage, \
             '가격', item.cost, \
@@ -1089,70 +1089,6 @@ def showshop(self):
             pl.defense += item.defense
         return pl.defense
 
-# 스텟
-def level_up(self):
-    print("\n" * 2)
-    print("=" * 25)
-    print("=" * 25)
-    print("{0:=^25}".format(" 레벨 업 "))
-    print("=" * 25)
-    print("=" * 25)
-    self.liv += 1
-    print('Lv. ' + str(self.liv) + ' 로 레벨업을 하였습니다\n')
-    self.exp = 0
-
-    while True:
-        print("{0:=^25}".format(" 스텟 "))
-        print("1 힘 스텟 {0}\
-            \n2 민첩 스텟 {1}\
-            \n3 모험 스텟 {2}".format(h_count, a_count, c_count))
-
-        num = input(":")
-        if num == '1':
-            print("{0:=^25}".format(" 힘 스텟 "))
-            print("스텟 1당 공격력이 0.5 증가합니다.")
-            ans = input("y / n : ")
-            if ans == 'y':
-                self.damage += 0.5
-                print("공격력 0.5가 추가 됩니다")
-                h_count += 1
-                break
-            elif ans == 'n':
-                continue
-
-        elif num == '2':
-            if a_count == 20:
-                continue
-            print("{0:=^25}".format(" 민첩 스텟 "))
-            print("스텟 1당 크리티컬 확률이 0.1% 증가합니다.")
-            ans = input("y / n : ")
-            if ans == 'y':
-                self.critical += 1
-                print("크리티컬 확률 0.1%가 추가 됩니다")
-                a_count += 1
-                break
-            elif sel == 'n':
-                continue
-
-        elif num == '3':
-            if c_count == 20:
-                continue
-            print("{0:=^25}".format(" 모험 스텟 "))
-            print("스텟 1당 체력이 6 증가합니다.")
-            sel = input("y / n : ")
-            if sel == 'y':
-                self.health += 6
-                print("체력이 6 추가 됩니다.")
-                c_count += 1
-                break
-            elif sel == 'n':
-                continue
-        else:
-            print("올바른 문자를 입력하세요")
-    else:
-        pass
-
-
 # 글씨 바꾸기
 def change_1(item):
     if item.use == 'atk':
@@ -1342,8 +1278,75 @@ def change_8(self): # 구역 : 36 / 지역 : 24 / 바다   성 : 1, 2, 3, 5, 19,
     else:
         return '바다'
 
+# 스텟
+def level_up(self):
+    print("\n" * 2)
+    print("=" * 25)
+    print("=" * 25)
+    print("{0:=^25}".format(" 레벨 업 "))
+    print("=" * 25)
+    print("=" * 25)
+    self.liv += 1
+    print('Lv. ' + str(self.liv) + ' 로 레벨업을 하였습니다\n')
+    self.exp = 0
+
+    while True:
+        print("{0:=^25}".format(" 스텟 "))
+        print("1 힘 스텟 {0}\
+            \n2 민첩 스텟 {1}\
+            \n3 모험 스텟 {2}".format(h_count, a_count, c_count))
+
+        num = input(":")
+        if num == '1':
+            print("{0:=^25}".format(" 힘 스텟 "))
+            print("스텟 1당 공격력이 0.5 증가합니다.")
+            ans = input("y / n : ")
+            if ans == 'y':
+                self.damage += 0.5
+                print("공격력 0.5가 추가 됩니다")
+                h_count += 1
+                break
+            elif ans == 'n':
+                continue
+
+        elif num == '2':
+            if a_count == 20:
+                continue
+            print("{0:=^25}".format(" 민첩 스텟 "))
+            print("스텟 1당 크리티컬 확률이 0.1% 증가합니다.")
+            ans = input("y / n : ")
+            if ans == 'y':
+                self.critical += 1
+                print("크리티컬 확률 0.1%가 추가 됩니다")
+                a_count += 1
+                break
+            elif sel == 'n':
+                continue
+
+        elif num == '3':
+            if c_count == 20:
+                continue
+            print("{0:=^25}".format(" 모험 스텟 "))
+            print("스텟 1당 체력이 6 증가합니다.")
+            sel = input("y / n : ")
+            if sel == 'y':
+                self.health += 6
+                print("체력이 6 추가 됩니다.")
+                c_count += 1
+                break
+            elif sel == 'n':
+                continue
+        else:
+            print("올바른 문자를 입력하세요")
+    else:
+        pass
+
 # 레벨, 위치, 패시브 체크
-def turn_chack(self, player_x, player_y, plag, level_up_count):
+def turn_chack(self, player_x, player_y, plag):
+
+    # 레벨업 체크
+    level_up_count = 0
+
     if self.liv == 1:
         if self.exp >= 4:
             self.exp -= 4
@@ -1403,8 +1406,275 @@ def turn_chack(self, player_x, player_y, plag, level_up_count):
             self.liv += 1
             level_up_count += 1
 
+    if level_up_count != 0:
+        level_up(self)
 
+    # 지역
+    point_count == 0
 
+    if point_count == 0:
+        if 83 <= player_x <= 91:
+            if 48 <= player_y <= 56:
+                self.point == 1
+                point_count += 1
+        if 80 <= player_x <= 86:
+            if 64 <= player_y <= 70:
+                self.point == 2
+                point_count += 1
+        if 68 <= player_x <= 74:
+            if 77 <= player_y <= 83:
+                self.point == 3
+                point_count += 1
+        if 74 <= player_x <= 78:
+            if 46 <= player_y <= 50:
+                self.point == 4
+                point_count += 1
+        if 65 <= player_x <= 69:
+            if 37 <= player_y <= 41:
+                self.point == 5
+                point_count += 1
+        if 64 <= player_x <= 66:
+            if 46 <= player_y <= 48:
+                self.point == 6
+                point_count += 1
+        if 66 <= player_x <= 69:
+            if 48 <= player_y <= 52:
+                self.point == 7
+                point_count += 1
+        if 72 <= player_x <= 76:
+            if 55 <= player_y <= 59:
+                self.point == 8
+                point_count += 1
+        if 64 <= player_x <= 70:
+            if 62 <= player_y <= 68:
+                self.point == 9
+                point_count += 1
+        if 75 <= player_x <= 79:
+            if 63 <= player_y <= 67:
+                self.point == 10
+                point_count += 1
+        if 63 <= player_x <= 67:
+            if 76 <= player_y <= 80:
+                self.point == 11
+                point_count += 1
+        if 63 <= player_x <= 67:
+            if 81 <= player_y <= 85:
+                self.point == 12
+                point_count += 1
+        if 77 <= player_x <= 79:
+            if 74 <= player_y <= 76:
+                self.point == 13
+                point_count += 1
+        if 81 <= player_x <= 87:
+            if 77 <= player_y <= 83:
+                self.point == 14
+                point_count += 1
+        if 94 <= player_x <= 98:
+            if 65 <= player_y <= 69:
+                self.point == 15
+                point_count += 1
+        if 92 <= player_x <= 93:
+            if 51 <= player_y <= 54:
+                self.point == 16
+                point_count += 1
+        if 85 <= player_x <= 88:
+            if 46 <= player_y <= 47:
+                self.point == 17
+                point_count += 1
+        if 23 <= player_x <= 29:
+            if 73 <= player_y <= 79:
+                self.point == 18
+                point_count += 1
+        if 18 <= player_x <= 22:
+            if 68 <= player_y <= 72:
+                self.point == 19
+                point_count += 1
+        if 28 <= player_x <= 32:
+            if 58 <= player_y <= 62:
+                self.point == 20
+                point_count += 1
+        if 24 <= player_x <= 26:
+            if 54 <= player_y <= 56:
+                self.point == 21
+                point_count += 1
+        if 30 <= player_x <= 36:
+            if 49 <= player_y <= 55:
+                self.point == 22
+                point_count += 1
+        if 39 <= player_x <= 41:
+            if 67 <= player_y <= 69:
+                self.point == 23
+                point_count += 1
+        if 48 <= player_x <= 52:
+            if 67 <= player_y <= 71:
+                self.point == 24
+                point_count += 1
+        if 46 <= player_x <= 52:
+            if 57 <= player_y <= 63:
+                self.point == 25
+                point_count += 1
+        if 40 <= player_x <= 44:
+            if 50 <= player_y <= 54:
+                self.point == 26
+                point_count += 1
+        if 38 <= player_x <= 40:
+            if 46 <= player_y <= 48:
+                self.point == 27
+                point_count += 1
+        if 44 <= player_x <= 50:
+            if 42 <= player_y <= 48:
+                self.point == 28
+                point_count += 1
+        if 48 <= player_x <= 52:
+            if 31 <= player_y <= 35:
+                self.point == 29
+                point_count += 1
+        if 31 <= player_x <= 32:
+            if 74 <= player_y <= 76:
+                self.point == 30
+                point_count += 1
+        if 31 <= player_x <= 33:
+            if 46 <= player_y <= 47:
+                self.point == 31
+                point_count += 1
+        if 3 <= player_x <= 8:
+            if 33 <= player_y <= 38:
+                self.point == 32
+                point_count += 1
+        if 14 <= player_x <= 16:
+            if 25 <= player_y <= 26:
+                self.point == 33
+                point_count += 1
+        if 16 <= player_x <= 18:
+            if 14 <= player_y <= 15:
+                self.point == 34
+                point_count += 1
+        if 9 <= player_x <= 11:
+            if 49 <= player_y <= 51:
+                self.point == 35
+                point_count += 1
+        if 49 <= player_x <= 51:
+            if 94 <= player_y <= 96:
+                self.point == 36
+                point_count += 1
+
+    if point_count == 0:
+        if 77 <= player_x <= 93:
+            if 46 <= player_y <= 62:
+                self.point == 50
+                point_count += 1
+        if 77 <= player_x <= 87:
+            if 63 <= player_y <= 73:
+                self.point == 51
+                point_count += 1
+        if 68 <= player_x <= 76:
+            if 75 <= player_y <= 83:
+                self.point == 52
+                point_count += 1
+        if 88 <= player_x <= 98:
+            if 63 <= player_y <= 73:
+                self.point == 53
+                point_count += 1
+        if 64 <= player_x <= 76:
+            if 36 <= player_y <= 48:
+                self.point == 54
+                point_count += 1
+        if 66 <= player_x <= 76:
+            if 49 <= player_y <= 59:
+                self.point == 55
+                point_count += 1
+        if 62 <= player_x <= 76:
+            if 60 <= player_y <= 74:
+                self.point == 56
+                point_count += 1
+        if 58 <= player_x <= 59:
+            if 61 <= player_y <= 63:
+                self.point == 56
+                point_count += 1
+        if 60 <= player_x <= 61:
+            if 62 <= player_y <= 65:
+                self.point == 56
+                point_count += 1
+        if 57 <= player_x <= 67:
+            if 75 <= player_y <= 85:
+                self.point == 57
+                point_count += 1
+        if 77 <= player_x <= 88:
+            if 74 <= player_y <= 84:
+                self.point == 58
+                point_count += 1
+        if 18 <= player_x <= 32:
+            if  <= player_y <= :
+                self.point == 59
+                point_count += 1
+        if 18 <= player_x <= 36:
+            if  <= player_y <= :
+                self.point == 60
+                point_count += 1
+        if 37 <= player_x <= 51:
+            if  <= player_y <= :
+                self.point == 61
+                point_count += 1
+        if 37 <= player_x <= 53:
+            if  <= player_y <= :
+                self.point == 62
+                point_count += 1
+        if 54 <= player_x <= 55:
+            if  <= player_y <= :
+                self.point == 62
+                point_count += 1
+        if 56 <= player_x <= 57:
+            if  <= player_y <= :
+                self.point == 62
+                point_count += 1
+        if 43 <= player_x <= 53:
+            if  <= player_y <= :
+                self.point == 63
+                point_count += 1
+        if 2 <= player_x <= 16:
+            if 25 <= player_y <= 39:
+                self.point == 64
+                point_count += 1
+        if 23 <= player_x <= 29:
+            if 19 <= player_y <= 25:
+                self.point == 65
+                point_count += 1
+        if 16 <= player_x <= 22:
+            if 9 <= player_y <= 15:
+                self.point == 66
+                point_count += 1
+        if 44 <= player_x <= 48:
+            if 26 <= player_y <= 20:
+                self.point == 67
+                point_count += 1
+        if 44 <= player_x <= 48:
+            if 11 <= player_y <= 15:
+                self.point == 68
+                point_count += 1
+        if 49 <= player_x <= 55:
+            if 13 <= player_y <= 19:
+                self.point == 69
+                point_count += 1
+        if 6 <= player_x <= 12:
+            if 87 <= player_y <= :
+                self.point == 70
+                point_count += 1
+        if 8 <= player_x <= 12:
+            if 82 <= player_y <= :
+                self.point == 71
+                point_count += 1
+        if 47 <= player_x <= 51:
+            if 93 <= player_y <= :
+                self.point == 72
+                point_count += 1
+        if 47 <= player_x <= 53:
+            if 84 <= player_y <= :
+                self.point == 73
+                point_count += 1
+        if 43 <= player_x <= 45:
+            if 78 <= player_y <= :
+                self.point == 74
+                point_count += 1
 
 # 게임 종료
 def game_over():
@@ -1431,7 +1701,7 @@ def main():
         import save
     except:
 
-        # story()
+        story()
 
         player_name = input("\n플레이어 이름을 입력하십시오. = ")
         while player_name == "":
@@ -1439,8 +1709,8 @@ def main():
             player_name = input("플레이어 이름을 입력하십시오. = ")
         player_1 = Player(player_name, 1.1, [], [], 60, 0, 0 ,0, 0, 50, 0, 0)
 
-        player_x = 50
-        player_y = 50
+        player_x = 87
+        player_y = 52
 
         plag = 0
 
@@ -1457,9 +1727,7 @@ def main():
 
         print("\n" * 38)
 
-        level_up_count = 0
-
-        turn_chack(self, player_x, player_y, plag, level_up_count) # 레벨, 위치, 패시브
+        turn_chack(self, player_x, player_y, plag) # 레벨, 위치, 패시브
 
         # 마을 버프
         if 1 <= player_1.point <= 3 or player_1.point == 5 or player_1.point == 19 or player_1.point == 22 or player_1.point == 28 or player_1.point == 36:
@@ -1475,9 +1743,6 @@ def main():
 
         if plag == 0:
             print("\n도움을 원한다면 'h' 입력")
-
-        if level_up_count != 0:
-            print("\n" + player_name + " 님이 " + player_1.liv + "Liv. 로 레벨업 하셨습니다.")
 
         ans = input("\n무엇을 하시겠습니까? : ")
 
@@ -1529,6 +1794,8 @@ def main():
             show_map()
         elif ans == "q":
             atk_def_inventory(item)
+        elif ans == "r":
+            warp_manager(player_x, player_y)
         elif ans == "h":
             print("\n게임설명\n방향 조작은 w,a,s,d 입니다.\n인벤토리는 e 키로 열 수 있습니다.\n장착중인 장비는 q 키로 열수 있습니다.\
                   \nf 키를 누르면 상점에 진입합니다.\nm 키로 지도를 볼수 있습니다.\
@@ -1554,5 +1821,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# https://cafe.naver.com/bjcrocodile/3275675

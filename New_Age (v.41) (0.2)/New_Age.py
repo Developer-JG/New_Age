@@ -4,8 +4,8 @@ import time
 
 print("\nthe New_Age (basilisk) game project\n")
 
-higt_health = 60
 
+higt_health = 60
 
 # 스토리
 def story():
@@ -39,15 +39,13 @@ def story():
     time.sleep(4)
     print("\nNew_Age (새로운_시대)\n")
 
-
 # 체크
-def check(message, start, end):
+def check (message, start, end):
     if message in list(map(str, range(start, end + 1))):
         message = int(message)
         return message
     else:
         return message
-
 
 # 플레이어 클래스
 class Player:
@@ -134,8 +132,7 @@ class Player:
 
 # 흰색 (노말) 무기 아이템 클래스
 class W_atk_item:
-    def __init__(self, name, damage, cost, liv, need_power_stats, need_agility_stats, need_adventure_stats, critical,
-                 physical_absorption, use):
+    def __init__(self, name, damage, cost, liv, need_power_stats, need_agility_stats, need_adventure_stats, critical, physical_absorption, use):
         self.name = name
         self.damage = damage
         self.cost = cost
@@ -150,7 +147,7 @@ class W_atk_item:
 
 # 보라색 (에픽) 무기 아이템 클래스
 class P_atk_item:
-    def __init__(self, name, damage, liv, critical, physical_absorption, use):
+    def __init__ (self, name, damage, liv, critical, physical_absorption, use):
         self.name = name
         self.damage = damage
         self.liv = liv
@@ -161,8 +158,7 @@ class P_atk_item:
 
 # 빨간색 (레전드) 렉스의 명작 아이템 클래스
 class R_r_atk_item:
-    def __init__(self, name, damage, need_power_stats, need_agility_stats, need_adventure_stats, critical,
-                 physical_absorption, use):
+    def __init__(self, name, damage, need_power_stats, need_agility_stats, need_adventure_stats, critical, physical_absorption, use):
         self.name = name
         self.damage = damage
         self.need_power_stats = need_power_stats
@@ -175,8 +171,7 @@ class R_r_atk_item:
 
 # 빨간색 (레전드) 사신수 무기 아이템 클래스
 class R_s_atk_item:
-    def __init__(self, name, damage, liv, need_power_stats, need_agility_stats, need_adventure_stats, critical,
-                 physical_absorption, use):
+    def __init__(self, name, damage, liv, need_power_stats, need_agility_stats, need_adventure_stats, critical, physical_absorption, use):
         self.name = name
         self.damage = damage
         self.liv = liv
@@ -211,8 +206,7 @@ class g_e_atk_item:
 
 # 흰색 (노말) 방어구 아이템 클래스
 class W_def_item:
-    def __init__(self, name, defense, cost, part, liv, need_power_stats, need_agility_stats, need_adventure_stats,
-                 plus_power_stats, plus_agility_stats, plus_health, use):
+    def __init__(self, name, defense, cost, part, liv, need_power_stats, need_agility_stats, need_adventure_stats, plus_power_stats, plus_agility_stats, plus_health, use):
         self.name = name
         self.defense = defense
         self.cost = cost
@@ -228,8 +222,8 @@ class W_def_item:
 
 
 # 보라색 (에픽) 방어구 아이템 클래스
-class P_def_item:
-    def __init__(self, name, defense, liv, part, need_power_stats, need_agility_stats, need_adventure_stats, use):
+class  P_def_item:
+    def __init__ (self, name, defense, liv, part, need_power_stats, need_agility_stats, need_adventure_stats, use):
         self.name = name
         self.defense = defense
         self.liv = liv
@@ -242,8 +236,7 @@ class P_def_item:
 
 # 빨간색 (레전드) 렉스의 명작 아이템 클래스
 class R_r_def_item:
-    def __init__(self, name, defense, part, need_power_stats, need_agility_stats, need_adventure_stats,
-                 plus_power_stats, plus_agility_stats, plus_adventure_stats, use):
+    def __init__(self, name, defense, part, need_power_stats, need_agility_stats, need_adventure_stats, plus_power_stats, plus_agility_stats, plus_adventure_stats, use):
         self.name = name
         self.defense = defense
         self.part = part
@@ -254,7 +247,6 @@ class R_r_def_item:
         self.plus_agility_stats = plus_agility_stats
         self.plus_adventure_stats = plus_adventure_stats
         self.use = use
-
 
 # 빨간색 (레전드) 사흉수 갑주 아이템 클래스
 class R_s_def_item:
@@ -344,144 +336,155 @@ W_atk_item_304 = W_atk_item("푸른 불꽃검", 110, 50, 30, 90, 0, 0, 0, 0, "at
 W_atk_item_305 = W_atk_item("악마 도끼", 99, 50, 30, 45, 0, 45, 0, 50, "atk")  # 45 : 0 : 45 +체력흡수 50
 W_atk_item_306 = W_atk_item("순백의 방패", 77, 50, 30, 0, 0, 90, 0, 154, "atk")  # 0 : 0 : 90 +체력흡수 154
 # 4월의 기억으로 구매
-W_atk_item_401 = W_atk_item("은빛 하늘검", 130, 40, 35, 100, 0, 90, 0, 0, "atk")  # 100 : 0 : 0
-W_atk_item_402 = W_atk_item("금빛 하늘검", 160, 50, 40, 120, 0, 45, 0, 0, "atk")  # 120 : 0 : 45
-W_atk_item_403 = W_atk_item("자연의 일부", 144, 50, 40, 60, 0, 60, 0, 144, "atk")  # 60 : 0 : 60 +체력흡수 144
+W_atk_item_401 = W_atk_item("은빛 하늘검", 130, 40, 35, 100, 0, 90, 0, 0,"atk")  # 100 : 0 : 0
+W_atk_item_402 = W_atk_item("금빛 하늘검", 160, 50, 40, 120, 0, 45, 0, 0,"atk")  # 120 : 0 : 45
+W_atk_item_403 = W_atk_item("자연의 일부", 144, 50, 40, 60, 0, 60, 0, 144,"atk")  # 60 : 0 : 60 +체력흡수 144
 
-W_def_item_001 = W_def_item("가죽 갑옷", 1, 0, 2, 1, 0, 0, 0, 0, 0, 0, "def")
-W_def_item_001 = W_def_item("가죽 신발", 1, 0, 4, 1, 0, 0, 0, 0, 0, 0, "def")
+
 # 1월의 기억으로 구매
-W_def_item_111 = W_def_item("녹슨 철 투구", 5, 15, 1, 10, 0, 0, 0, 0, 0, 0, "def")
-W_def_item_112 = W_def_item("녹슨 철 갑옷", 5, 15, 2, 10, 0, 0, 0, 0, 0, 0, "def")
-W_def_item_113 = W_def_item("녹슨 철 바지", 5, 15, 3, 10, 0, 0, 0, 0, 0, 0, "def")
-W_def_item_114 = W_def_item("녹슨 철 신발", 5, 15, 4, 10, 0, 0, 0, 0, 0, 0, "def")
+W_def_item_111 = W_def_item("녹슨 철 투구",5,15,1,10,0,0,0,0,0,0,"def")
+W_def_item_112 = W_def_item("녹슨 철 갑옷",5,15,2,10,0,0,0,0,0,0,"def")
+W_def_item_113 = W_def_item("녹슨 철 바지",5,15,3,10,0,0,0,0,0,0,"def")
+W_def_item_114 = W_def_item("녹슨 철 신발",5,15,4,10,0,0,0,0,0,0,"def")
 # 2월의 기억으로 구매
-W_def_item_211 = W_def_item("힘의 철 투구", 20, 20, 1, 20, 50, 0, 0, 5, 0, 0, "def")  # 힘 + 5 / 요구 힘 : 50
-W_def_item_212 = W_def_item("힘의 철 갑옷", 20, 20, 2, 20, 50, 0, 0, 5, 0, 0, "def")
-W_def_item_213 = W_def_item("힘의 철 바지", 20, 20, 3, 20, 50, 0, 0, 5, 0, 0, "def")
-W_def_item_214 = W_def_item("힘의 철 신발", 20, 20, 4, 20, 50, 0, 0, 5, 0, 0, "def")
-W_def_item_221 = W_def_item("민첩의 철 투구", 15, 22, 1, 20, 0, 50, 0, 0, 5, 0, "def")  # 민첩 + 5 / 요구 민첩 : 50
-W_def_item_222 = W_def_item("민첩의 철 갑옷", 15, 22, 2, 20, 0, 50, 0, 0, 5, 0, "def")
-W_def_item_223 = W_def_item("민첩의 철 바지", 15, 22, 3, 20, 0, 50, 0, 0, 5, 0, "def")
-W_def_item_224 = W_def_item("민첩의 철 신발", 15, 22, 4, 20, 0, 50, 0, 0, 5, 0, "def")
-W_def_item_231 = W_def_item("모험의 철 투구", 30, 22, 1, 20, 0, 0, 50, 0, 0, 50, "def")  # 추가 체력 + 50 / 요구 모험 : 50
-W_def_item_232 = W_def_item("모험의 철 갑옷", 30, 22, 2, 20, 0, 0, 50, 0, 0, 50, "def")
-W_def_item_233 = W_def_item("모험의 철 바지", 30, 22, 3, 20, 0, 0, 50, 0, 0, 50, "def")
-W_def_item_234 = W_def_item("모험의 철 신발", 30, 22, 4, 20, 0, 0, 50, 0, 0, 50, "def")
+W_def_item_211 = W_def_item("힘의 철 투구",20,20,1,20,50,0,0,5,0,0,"def") # 힘 + 5 / 요구 힘 : 50
+W_def_item_212 = W_def_item("힘의 철 갑옷",20,20,2,20,50,0,0,5,0,0,"def")
+W_def_item_213 = W_def_item("힘의 철 바지",20,20,3,20,50,0,0,5,0,0,"def")
+W_def_item_214 = W_def_item("힘의 철 신발",20,20,4,20,50,0,0,5,0,0,"def")
+W_def_item_221 = W_def_item("민첩의 철 투구",15,22,1,20,0,50,0,0,5,0,"def") # 민첩 + 5 / 요구 민첩 : 50
+W_def_item_222 = W_def_item("민첩의 철 갑옷",15,22,2,20,0,50,0,0,5,0,"def")
+W_def_item_223 = W_def_item("민첩의 철 바지",15,22,3,20,0,50,0,0,5,0,"def")
+W_def_item_224 = W_def_item("민첩의 철 신발",15,22,4,20,0,50,0,0,5,0,"def")
+W_def_item_231 = W_def_item("모험의 철 투구",30,22,1,20,0,0,50,0,0,50,"def") # 추가 체력 + 50 / 요구 모험 : 50
+W_def_item_232 = W_def_item("모험의 철 갑옷",30,22,2,20,0,0,50,0,0,50,"def")
+W_def_item_233 = W_def_item("모험의 철 바지",30,22,3,20,0,0,50,0,0,50,"def")
+W_def_item_234 = W_def_item("모험의 철 신발",30,22,4,20,0,0,50,0,0,50,"def")
 # 3월의 기억으로 구매
-W_def_item_311 = W_def_item("힘의 적표범 투구", 30, 22, 1, 30, 85, 0, 0, 10, 0, 0, "def")  # 힘 + 10 / 요구 힘 : 85
-W_def_item_312 = W_def_item("힘의 적표범 갑옷", 30, 22, 2, 30, 85, 0, 0, 10, 0, 0, "def")
-W_def_item_313 = W_def_item("힘의 적표범 바지", 30, 22, 3, 30, 85, 0, 0, 10, 0, 0, "def")
-W_def_item_314 = W_def_item("힘의 적표범 신발", 30, 22, 4, 30, 85, 0, 0, 10, 0, 0, "def")
-W_def_item_321 = W_def_item("민첩의 적표범 투구", 20, 22, 1, 30, 0, 85, 0, 0, 20, 0, "def")  # 민첩 + 20 / 요구 민첩 : 85
-W_def_item_322 = W_def_item("민첩의 적표범 갑옷", 20, 22, 2, 30, 0, 85, 0, 0, 20, 0, "def")
-W_def_item_323 = W_def_item("민첩의 적표범 바지", 20, 22, 3, 30, 0, 85, 0, 0, 20, 0, "def")
-W_def_item_324 = W_def_item("민첩의 적표범 신발", 20, 22, 4, 30, 0, 85, 0, 0, 20, 0, "def")
-W_def_item_331 = W_def_item("모험의 적표범 투구", 40, 22, 1, 30, 0, 0, 85, 0, 0, 100, "def")  # 추가체력 + 100 / 요구 모험 : 85
-W_def_item_332 = W_def_item("모험의 적표범 갑옷", 40, 22, 2, 30, 0, 0, 85, 0, 0, 100, "def")
-W_def_item_333 = W_def_item("모험의 적표범 바지", 40, 22, 3, 30, 0, 0, 85, 0, 0, 100, "def")
-W_def_item_334 = W_def_item("모험의 적표범 신발", 40, 22, 4, 30, 0, 0, 85, 0, 0, 100, "def")
+W_def_item_311 = W_def_item("힘의 적표범 투구",30,22,1,30,85,0,0,10,0,0,"def") # 힘 + 10 / 요구 힘 : 85
+W_def_item_312 = W_def_item("힘의 적표범 갑옷",30,22,2,30,85,0,0,10,0,0,"def")
+W_def_item_313 = W_def_item("힘의 적표범 바지",30,22,3,30,85,0,0,10,0,0,"def")
+W_def_item_314 = W_def_item("힘의 적표범 신발",30,22,4,30,85,0,0,10,0,0,"def")
+W_def_item_321 = W_def_item("민첩의 적표범 투구",20,22,1,30,0,85,0,0,20,0,"def") # 민첩 + 20 / 요구 민첩 : 85
+W_def_item_322 = W_def_item("민첩의 적표범 갑옷",20,22,2,30,0,85,0,0,20,0,"def")
+W_def_item_323 = W_def_item("민첩의 적표범 바지",20,22,3,30,0,85,0,0,20,0,"def")
+W_def_item_324 = W_def_item("민첩의 적표범 신발",20,22,4,30,0,85,0,0,20,0,"def")
+W_def_item_331 = W_def_item("모험의 적표범 투구",40,22,1,30,0,0,85,0,0,100,"def") # 추가체력 + 100 / 요구 모험 : 85
+W_def_item_332 = W_def_item("모험의 적표범 갑옷",40,22,2,30,0,0,85,0,0,100,"def")
+W_def_item_333 = W_def_item("모험의 적표범 바지",40,22,3,30,0,0,85,0,0,100,"def")
+W_def_item_334 = W_def_item("모험의 적표범 신발",40,22,4,30,0,0,85,0,0,100,"def")
 # 4월의 기억으로 구매
-W_def_item_411 = W_def_item("힘의 칠흑 투구", 50, 25, 1, 40, 120, 0, 0, 15, 0, 0, "def")  # 힘 + 15 / 요구 힘 : 120
-W_def_item_412 = W_def_item("힘의 칠흑 갑옷", 50, 25, 2, 40, 120, 0, 0, 15, 0, 0, "def")
-W_def_item_413 = W_def_item("힘의 칠흑 바지", 50, 25, 3, 40, 120, 0, 0, 15, 0, 0, "def")
-W_def_item_414 = W_def_item("힘의 칠흑 신발", 50, 25, 4, 40, 120, 0, 0, 15, 0, 0, "def")
-W_def_item_421 = W_def_item("민첩의 칠흑 투구", 25, 25, 1, 40, 0, 120, 0, 0, 35, 0, "def")  # 민첩 + 35 / 요구 민첩 : 120
-W_def_item_422 = W_def_item("민첩의 칠흑 갑옷", 25, 25, 2, 40, 0, 120, 0, 0, 35, 0, "def")
-W_def_item_423 = W_def_item("민첩의 칠흑 바지", 25, 25, 3, 40, 0, 120, 0, 0, 35, 0, "def")
-W_def_item_424 = W_def_item("민첩의 칠흑 신발", 25, 25, 4, 40, 0, 120, 0, 0, 35, 0, "def")
-W_def_item_431 = W_def_item("모험의 칠흑 투구", 70, 25, 1, 40, 0, 0, 120, 0, 0, 200, "def")  # 추가체력 + 200 / 요구 모험 : 120
-W_def_item_432 = W_def_item("모험의 칠흑 갑옷", 70, 25, 2, 40, 0, 0, 120, 0, 0, 200, "def")
-W_def_item_433 = W_def_item("모험의 칠흑 바지", 70, 25, 3, 40, 0, 0, 120, 0, 0, 200, "def")
-W_def_item_434 = W_def_item("모험의 칠흑 신발", 70, 25, 4, 40, 0, 0, 120, 0, 0, 200, "def")
+W_def_item_411 = W_def_item("힘의 칠흑 투구",50,25,1,40,120,0,0,15,0,0,"def") # 힘 + 15 / 요구 힘 : 120
+W_def_item_412 = W_def_item("힘의 칠흑 갑옷",50,25,2,40,120,0,0,15,0,0,"def")
+W_def_item_413 = W_def_item("힘의 칠흑 바지",50,25,3,40,120,0,0,15,0,0,"def")
+W_def_item_414 = W_def_item("힘의 칠흑 신발",50,25,4,40,120,0,0,15,0,0,"def")
+W_def_item_421 = W_def_item("민첩의 칠흑 투구",25,25,1,40,0,120,0,0,35,0,"def") # 민첩 + 35 / 요구 민첩 : 120
+W_def_item_422 = W_def_item("민첩의 칠흑 갑옷",25,25,2,40,0,120,0,0,35,0,"def")
+W_def_item_423 = W_def_item("민첩의 칠흑 바지",25,25,3,40,0,120,0,0,35,0,"def")
+W_def_item_424 = W_def_item("민첩의 칠흑 신발",25,25,4,40,0,120,0,0,35,0,"def")
+W_def_item_431 = W_def_item("모험의 칠흑 투구",70,25,1,40,0,0,120,0,0,200,"def") # 추가체력 + 200 / 요구 모험 : 120
+W_def_item_432 = W_def_item("모험의 칠흑 갑옷",70,25,2,40,0,0,120,0,0,200,"def")
+W_def_item_433 = W_def_item("모험의 칠흑 바지",70,25,3,40,0,0,120,0,0,200,"def")
+W_def_item_434 = W_def_item("모험의 칠흑 신발",70,25,4,40,0,0,120,0,0,200,"def")
 # 5월의 기억으로 구매
-W_def_item_511 = W_def_item("힘의 기사 투구", 70, 30, 1, 50, 150, 0, 0, 30, 0, 0, "def")  # 힘 + 30 / 요구 힘 : 150
-W_def_item_512 = W_def_item("힘의 기사 갑옷", 70, 30, 2, 50, 150, 0, 0, 30, 0, 0, "def")
-W_def_item_513 = W_def_item("힘의 기사 바지", 70, 30, 3, 50, 150, 0, 0, 30, 0, 0, "def")
-W_def_item_514 = W_def_item("힘의 기사 신발", 70, 30, 4, 50, 150, 0, 0, 30, 0, 0, "def")
-W_def_item_521 = W_def_item("민첩의 기사 투구", 50, 30, 1, 50, 0, 150, 0, 0, 60, 0, "def")  # 민첩 + 60 / 요구 민첩 : 150
-W_def_item_522 = W_def_item("민첩의 기사 갑옷", 50, 30, 2, 50, 0, 150, 0, 0, 60, 0, "def")
-W_def_item_523 = W_def_item("민첩의 기사 바지", 50, 30, 3, 50, 0, 150, 0, 0, 60, 0, "def")
-W_def_item_524 = W_def_item("민첩의 기사 신발", 50, 30, 4, 50, 0, 150, 0, 0, 60, 0, "def")
-W_def_item_531 = W_def_item("모험의 기사 투구", 100, 30, 1, 50, 0, 0, 150, 0, 0, 400, "def")  # 추가체력 + 400 / 요구 모험 : 150
-W_def_item_532 = W_def_item("모험의 기사 갑옷", 100, 30, 2, 50, 0, 0, 150, 0, 0, 400, "def")
-W_def_item_533 = W_def_item("모험의 기사 바지", 100, 30, 3, 50, 0, 0, 150, 0, 0, 400, "def")
-W_def_item_534 = W_def_item("모험의 기사 신발", 100, 30, 4, 50, 0, 0, 150, 0, 0, 400, "def")
+W_def_item_511 = W_def_item("힘의 기사 투구",70,30,1,50,150,0,0,30,0,0,"def") # 힘 + 30 / 요구 힘 : 150
+W_def_item_512 = W_def_item("힘의 기사 갑옷",70,30,2,50,150,0,0,30,0,0,"def")
+W_def_item_513 = W_def_item("힘의 기사 바지",70,30,3,50,150,0,0,30,0,0,"def")
+W_def_item_514 = W_def_item("힘의 기사 신발",70,30,4,50,150,0,0,30,0,0,"def")
+W_def_item_521 = W_def_item("민첩의 기사 투구",50,30,1,50,0,150,0,0,60,0,"def") # 민첩 + 60 / 요구 민첩 : 150
+W_def_item_522 = W_def_item("민첩의 기사 갑옷",50,30,2,50,0,150,0,0,60,0,"def")
+W_def_item_523 = W_def_item("민첩의 기사 바지",50,30,3,50,0,150,0,0,60,0,"def")
+W_def_item_524 = W_def_item("민첩의 기사 신발",50,30,4,50,0,150,0,0,60,0,"def")
+W_def_item_531 = W_def_item("모험의 기사 투구",100,30,1,50,0,0,150,0,0,400,"def") # 추가체력 + 400 / 요구 모험 : 150
+W_def_item_532 = W_def_item("모험의 기사 갑옷",100,30,2,50,0,0,150,0,0,400,"def")
+W_def_item_533 = W_def_item("모험의 기사 바지",100,30,3,50,0,0,150,0,0,400,"def")
+W_def_item_534 = W_def_item("모험의 기사 신발",100,30,4,50,0,0,150,0,0,400,"def")
+
+
+
 
 # 50레벨 퀘스트 아이템
-P_atk_item_501 = P_atk_item("불완전한 홍염의 날갯깃", 320, 50, 30, 150, "atk")
+P_atk_item_501 = P_atk_item("불완전한 홍염의 날갯깃",320,50,30,150,"atk")
 
-P_def_item_611 = P_def_item("부서진 핀그리드의 투구", 75, 50, 1, 20, 20, 20, "def")
-P_def_item_612 = P_def_item("부서진 핀그리드의 갑옷", 75, 50, 2, 20, 20, 20, "def")
-P_def_item_613 = P_def_item("부서진 핀그리드의 바지", 75, 50, 3, 20, 20, 20, "def")
-P_def_item_614 = P_def_item("부서진 핀그리드의 신발", 75, 50, 4, 20, 20, 20, "def")
+P_def_item_611 = P_def_item("부서진 핀그리드의 투구",75,50,1,20,20,20,"def")
+P_def_item_612 = P_def_item("부서진 핀그리드의 갑옷",75,50,2,20,20,20,"def")
+P_def_item_613 = P_def_item("부서진 핀그리드의 바지",75,50,3,20,20,20,"def")
+P_def_item_614 = P_def_item("부서진 핀그리드의 신발",75,50,4,20,20,20,"def")
+
 
 # 렉스의 명작
-R_atk_item_601 = R_r_atk_item("렉스의 1번째 명작 '홍염의 날개깃'", 250, 70, 70, 70, 10, 300, "atk")
-R_atk_item_602 = R_r_atk_item("렉스의 2번째 명작 '칼날 그림자'", 100, 140, 0, 0, 70, 0, "atk")
-R_atk_item_603 = R_r_atk_item("렉스의 3번째 명작 '녹색 이빨'", 4, 0, 0, 0, 0, 0, "atk")
-R_atk_item_604 = R_r_atk_item("렉스의 4번째 명작 '붉은 손아귀'", 50, 20, 20, 0, 10, 0, "atk")
-R_atk_item_605 = R_r_atk_item("렉스의 5번째 명작 '인어의 검'", 60, 60, 0, 50, 0, 200, "atk")
-R_atk_item_606 = R_r_atk_item("렉스의 6번째 명작 '불굴의 대지'", 10, 0, 0, 120, 0, 400, "atk")
+R_atk_item_601 = R_r_atk_item("렉스의 1번째 명작 '홍염의 날개깃'",250,70,70,70,10,300,"atk")
+R_atk_item_602 = R_r_atk_item("렉스의 2번째 명작 '칼날 그림자'",100,140,0,0,70,0,"atk")
+R_atk_item_603 = R_r_atk_item("렉스의 3번째 명작 '녹색 이빨'",4,0,0,0,0,0,"atk")
+R_atk_item_604 = R_r_atk_item("렉스의 4번째 명작 '붉은 손아귀'",50,20,20,0,10,0,"atk")
+R_atk_item_605 = R_r_atk_item("렉스의 5번째 명작 '인어의 검'",60,60,0,50,0,200,"atk")
+R_atk_item_606 = R_r_atk_item("렉스의 6번째 명작 '불굴의 대지'",10,0,0,120,0,400,"atk")
 
-R_atk_item_611 = R_r_atk_item("렉스의 7번째 명작 '고대갑주 쿠구'", 30, 0, 0, 0, 100, 0, 0, "def")
-R_atk_item_612 = R_r_atk_item("렉스의 8번째 명작 '고대갑주 갑옷'", 100, 0, 0, 0, 0, 0, 100, "def")
-R_atk_item_613 = R_r_atk_item("렉스의 9번째 명작 '고대갑주 바지'", 60, 35, 35, 35, 0, 0, 0, "def")
-R_atk_item_614 = R_r_atk_item("렉스의 10번째 명작 '고대갑주 신발'", 5, 0, 0, 0, 0, 100, 0, "def")
+R_atk_item_611 = R_r_atk_item("렉스의 7번째 명작 '고대갑주 쿠구'",30,0,0,0,100,0,0,"def")
+R_atk_item_612 = R_r_atk_item("렉스의 8번째 명작 '고대갑주 갑옷'",100,0,0,0,0,0,100,"def")
+R_atk_item_613 = R_r_atk_item("렉스의 9번째 명작 '고대갑주 바지'",60,35,35,35,0,0,0,"def")
+R_atk_item_614 = R_r_atk_item("렉스의 10번째 명작 '고대갑주 신발'",5,0,0,0,0,100,0,"def")
+
 
 # 각성된 랙스의 명작
-R_atk_item_621 = R_r_atk_item("렉스의 1번째 명작 '그람'", 450, 80, 80, 80, 35, 350, "atk")
-R_atk_item_622 = R_r_atk_item("렉스의 2번째 명작 '발뭉'", 200, 0, 140, 0, 70, 0, "atk")
-R_atk_item_623 = R_r_atk_item("렉스의 3번째 명작 '레바테인'", 150, 0, 0, 0, 35, 0, "atk")
-R_atk_item_624 = R_r_atk_item("렉스의 4번째 명작 '파프니르의 발톱'", 250, 70, 70, 0, 20, 0, "atk")
-R_atk_item_625 = R_r_atk_item("렉스의 5번째 명작 '궁니르'", 120, 70, 0, 60, 0, 300, "atk")
-R_atk_item_626 = R_r_atk_item("렉스의 6번째 명작 '란드그리드'", 10, 0, 0, 140, 0, 650, "atk")
+R_atk_item_621 = R_r_atk_item("렉스의 1번째 명작 '그람'",450,80,80,80,35,350,"atk")
+R_atk_item_622 = R_r_atk_item("렉스의 2번째 명작 '발뭉'",200,0,140,0,70,0,"atk")
+R_atk_item_623 = R_r_atk_item("렉스의 3번째 명작 '레바테인'",150,0,0,0,35,0,"atk")
+R_atk_item_624 = R_r_atk_item("렉스의 4번째 명작 '파프니르의 발톱'",250,70,70,0,20,0,"atk")
+R_atk_item_625 = R_r_atk_item("렉스의 5번째 명작 '궁니르'",120,70,0,60,0,300,"atk")
+R_atk_item_626 = R_r_atk_item("렉스의 6번째 명작 '란드그리드'",10,0,0,140,0,650,"atk")
 
-R_atk_item_631 = R_r_atk_item("렉스의 7번째 명작 '필리아스의 쿠구'", 60, 0, 0, 0, 100, 0, 0, "def")
-R_atk_item_632 = R_r_atk_item("렉스의 8번째 명작 '필리아스의 갑옷'", 200, 0, 0, 0, 0, 0, 100, "def")
-R_atk_item_633 = R_r_atk_item("렉스의 9번째 명작 '필리아스의 바지'", 120, 35, 35, 35, 0, 0, 0, "def")
-R_atk_item_634 = R_r_atk_item("렉스의 10번째 명작 '필리아스의 신발'", 10, 0, 0, 0, 0, 100, 0, "def")
+R_atk_item_631 = R_r_atk_item("렉스의 7번째 명작 '필리아스의 쿠구'",60,0,0,0,100,0,0,"def")
+R_atk_item_632 = R_r_atk_item("렉스의 8번째 명작 '필리아스의 갑옷'",200,0,0,0,0,0,100,"def")
+R_atk_item_633 = R_r_atk_item("렉스의 9번째 명작 '필리아스의 바지'",120,35,35,35,0,0,0,"def")
+R_atk_item_634 = R_r_atk_item("렉스의 10번째 명작 '필리아스의 신발'",10,0,0,0,0,100,0,"def")
+
 
 # 사신수 무기
-R_atk_item_701 = R_s_atk_item("사신수 무기 '청룡의 검'", 420, 50, 50, 50, 120, 20, 430, "atk")
-R_atk_item_702 = R_s_atk_item("사신수 무기 '백호의 도끼'", 550, 50, 120, 0, 100, 0, 40, "atk")
-R_atk_item_703 = R_s_atk_item("사신수 무기 '주작의 단검'", 300, 50, 20, 200, 0, 90, 0, "atk")
-R_atk_item_704 = R_s_atk_item("사신수 무기 '현무의 창'", 400, 50, 110, 110, 0, 40, 0, "atk")
+R_atk_item_701 = R_s_atk_item("사신수 무기 '청룡의 검'",420,50,50,50,120,20,430,"atk")
+R_atk_item_702 = R_s_atk_item("사신수 무기 '백호의 도끼'",550,50,120,0,100,0,40,"atk")
+R_atk_item_703 = R_s_atk_item("사신수 무기 '주작의 단검'",300,50,20,200,0,90,0,"atk")
+R_atk_item_704 = R_s_atk_item("사신수 무기 '현무의 창'",400,50,110,110,0,40,0,"atk")
+
 
 # 각성한 사신수 무기
-R_atk_item_711 = R_s_atk_item("사신수 무기 '청룡의 검'", 4000, 70, 50, 50, 120, 20, 430, "atk")
-R_atk_item_712 = R_s_atk_item("사신수 무기 '백호의 도끼'", 4000, 70, 120, 0, 100, 0, 40, "atk")
-R_atk_item_713 = R_s_atk_item("사신수 무기 '주작의 단검'", 4000, 70, 20, 200, 0, 90, 0, "atk")
-R_atk_item_714 = R_s_atk_item("사신수 무기 '현무의 창'", 4000, 50, 110, 110, 0, 40, 0, "atk")
+R_atk_item_711 = R_s_atk_item("사신수 무기 '청룡의 검'",4000,70,50,50,120,20,430,"atk")
+R_atk_item_712 = R_s_atk_item("사신수 무기 '백호의 도끼'",4000,70,120,0,100,0,40,"atk")
+R_atk_item_713 = R_s_atk_item("사신수 무기 '주작의 단검'",4000,70,20,200,0,90,0,"atk")
+R_atk_item_714 = R_s_atk_item("사신수 무기 '현무의 창'",4000,50,110,110,0,40,0,"atk")
+
 
 # 사흉수 갑주
-R_def_item_701 = R_s_def_item("사흉주 갑옷 '혼돈의 투구'", 200, 1, 100, 150, 150, 150, "atk")
-R_def_item_702 = R_s_def_item("사흉수 갑옷 '도철의 갑옷'", 200, 2, 100, 150, 150, 150, "atk")
-R_def_item_703 = R_s_def_item("사흉주 갑옷 '도올의 바지'", 200, 3, 100, 150, 150, 150, "atk")
-R_def_item_704 = R_s_def_item("사흉수 갑옷 '궁기의 신발'", 200, 4, 100, 150, 150, 150, "atk")
+R_def_item_701 = R_s_def_item("사흉주 갑옷 '혼돈의 투구'",200,1,100,150,150,150,"atk")
+R_def_item_702 = R_s_def_item("사흉수 갑옷 '도철의 갑옷'",200,2,100,150,150,150,"atk")
+R_def_item_703 = R_s_def_item("사흉주 갑옷 '도올의 바지'",200,3,100,150,150,150,"atk")
+R_def_item_704 = R_s_def_item("사흉수 갑옷 '궁기의 신발'",200,4,100,150,150,150,"atk")
+
 
 # 카우아(흑룡)의 검
-R_atk_item_801 = R_b_atk_item("힘을 잃은 흑룡의 검", 1500, 60, 70, "atk")
-R_atk_item_802 = R_b_atk_item("힘을 되찾은 흑룡의 검", 2250, 65, 70, "atk")
-R_atk_item_803 = R_b_atk_item("힘을 깨우친 카우아의 검", 3000, 70, 70, "atk")
+R_atk_item_801 = R_b_atk_item("힘을 잃은 흑룡의 검",1500,60,70,"atk")
+R_atk_item_802 = R_b_atk_item("힘을 되찾은 흑룡의 검",2250,65,70,"atk")
+R_atk_item_803 = R_b_atk_item("힘을 깨우친 카우아의 검",3000,70,70,"atk")
 
 # 흑룡의 갑주 (65레벨)
-R_def_item_801 = R_d_def_item("흑룡의 갑주 투구", 100, 1, 65, 100, 100, 100, "def")
-R_def_item_802 = R_d_def_item("흑룡의 갑주 갑옷", 100, 2, 65, 100, 100, 100, "def")
-R_def_item_803 = R_d_def_item("흑룡의 갑주 바지", 100, 3, 65, 100, 100, 100, "def")
-R_def_item_804 = R_d_def_item("흑룡의 갑주 신발", 100, 4, 65, 100, 100, 100, "def")
+R_def_item_801 = R_d_def_item("흑룡의 갑주 투구",100,1,65,100,100,100,"def")
+R_def_item_802 = R_d_def_item("흑룡의 갑주 갑옷",100,2,65,100,100,100,"def")
+R_def_item_803 = R_d_def_item("흑룡의 갑주 바지",100,3,65,100,100,100,"def")
+R_def_item_804 = R_d_def_item("흑룡의 갑주 신발",100,4,65,100,100,100,"def")
+
 
 # 흑룡의 갑주 (70레벨)
-R_def_item_811 = R_d_def_item("흑룡의 갑주 투구", 300, 1, 70, 200, 200, 200, "def")
-R_def_item_812 = R_d_def_item("흑룡의 갑주 갑옷", 300, 2, 70, 200, 200, 200, "def")
-R_def_item_823 = R_d_def_item("흑룡의 갑주 바지", 300, 3, 70, 200, 200, 200, "def")
-R_def_item_824 = R_d_def_item("흑룡의 갑주 신발", 300, 4, 70, 200, 200, 200, "def")
+R_def_item_811 = R_d_def_item("흑룡의 갑주 투구",300,1,70,200,200,200,"def")
+R_def_item_812 = R_d_def_item("흑룡의 갑주 갑옷",300,2,70,200,200,200,"def")
+R_def_item_823 = R_d_def_item("흑룡의 갑주 바지",300,3,70,200,200,200,"def")
+R_def_item_824 = R_d_def_item("흑룡의 갑주 신발",300,4,70,200,200,200,"def")
+
 
 # 선과 악
-g_e_atk_item_01 = g_e_atk_item("세번째 아이 '트리아'", 30000, 100, 5000, "atk")
-g_e_atk_item_02 = g_e_atk_item("첫번째 아이 '에나'", 30000, 100, 5000, "atk")
+g_e_atk_item_01 = g_e_atk_item("세번째 아이 '트리아'",30000,100,5000,"atk")
+g_e_atk_item_02 = g_e_atk_item("첫번째 아이 '에나'",30000,100,5000,"atk")
 
-# 강화서 (개척자의 증표로 구매)
+
+# 강화서 (개척자의 반지로 구매)
 fortification_item_101 = fortification_item("하급 무기강화", 1, "+ 3~18 데미지 (레벨 제한 3)")
 fortification_item_201 = fortification_item("중급 무기강화", 1, "+ 3~27 데미지 (레벨 제한 4)")
 fortification_item_202 = fortification_item("고급 무기강화", 3, "+ 18~27 데미지 (레벨 제한 5)")
@@ -494,15 +497,17 @@ fortification_item_302 = fortification_item("저주받은 크티티컬 강화", 
 fortification_item_303 = fortification_item("저주받은 방어구 강화", 10, "체력증가 + 500 (방어력 -50)")
 fortification_item_401 = fortification_item("어둠의 강화", 5, "+ 25 데미 (레벨 제한 55)")
 
+
 # 회복의 돌
-re_item_01 = Re_item("최하급 회복의 돌", 10, 1, 1, "re")
-re_item_02 = Re_item("하급 회복의 돌", 50, 10, 1, "re")
-re_item_03 = Re_item("중급 회복의 돌", 100, 50, 1, "re")
-re_item_04 = Re_item("상급 회복의 돌", 500, 500, 1, "re")
-re_item_05 = Re_item("최상급 회복의 돌", 1000, 2000, 1, "re")
+re_item_01 = Re_item("최하급 회복의 돌",10,1,1,"re")
+re_item_02 = Re_item("하급 회복의 돌",50,10,1,"re")
+re_item_03 = Re_item("중급 회복의 돌",100,50,1,"re")
+re_item_04 = Re_item("상급 회복의 돌",500,500,1,"re")
+re_item_05 = Re_item("최상급 회복의 돌",1000,2000,1,"re")
+
 
 # n월의 기억
-month_item_01 = nomal_item_shop("1월의 기억", 1, 100, "nomal")  # 100원
+month_item_01 = nomal_item_shop("1월의 기억", 1, 100, "nomal") #100원
 month_item_02 = nomal_item("2월의 기억", 1, "nomal")
 month_item_03 = nomal_item("3월의 기억", 1, "nomal")
 month_item_04 = nomal_item("4월의 기억", 1, "nomal")
@@ -514,7 +519,9 @@ month_item_09 = nomal_item("9월의 기억", 1, "nomal")
 month_item_10 = nomal_item("10월의 기억", 1, "nomal")
 month_item_11 = nomal_item("11월의 기억", 1, "nomal")
 
-nomal_item_00 = nomal_item("개척자의 증표", 1, "nomal")
+nomal_item_00 = nomal_item("개척자의 반지", 1, "nomal")
+
+
 
 W_atk_item_list = [W_atk_item_101, W_atk_item_102, W_atk_item_103, W_atk_item_104, W_atk_item_105, W_atk_item_106, \
                    W_atk_item_201, W_atk_item_202, W_atk_item_203, W_atk_item_204, W_atk_item_205, W_atk_item_206, \
@@ -523,8 +530,7 @@ W_atk_item_list = [W_atk_item_101, W_atk_item_102, W_atk_item_103, W_atk_item_10
                    W_atk_item_401, W_atk_item_402, W_atk_item_403]
 
 W_atk_item_list_1 = [W_atk_item_101, W_atk_item_102, W_atk_item_103, W_atk_item_104, W_atk_item_105, W_atk_item_106]
-W_atk_item_list_2 = [W_atk_item_201, W_atk_item_202, W_atk_item_204, W_atk_item_205, W_atk_item_206, W_atk_item_207,
-                     W_atk_item_209]
+W_atk_item_list_2 = [W_atk_item_201, W_atk_item_202, W_atk_item_203, W_atk_item_204, W_atk_item_205, W_atk_item_206, W_atk_item_207, W_atk_item_208, W_atk_item_209]
 W_atk_item_list_3 = [W_atk_item_301, W_atk_item_302, W_atk_item_303, W_atk_item_304, W_atk_item_305, W_atk_item_306]
 W_atk_item_list_4 = [W_atk_item_401, W_atk_item_402, W_atk_item_403]
 
@@ -537,40 +543,24 @@ R_atk_item_list_2 = [R_atk_item_801, R_atk_item_802, R_atk_item_803, \
                      R_def_item_701, R_def_item_702, R_def_item_703, R_def_item_704]
 
 W_def_item_list = [W_def_item_111, W_def_item_112, W_def_item_113, W_def_item_114, \
-                   W_def_item_211, W_def_item_212, W_def_item_213, W_def_item_214, W_def_item_221, W_def_item_222,
-                   W_def_item_223, W_def_item_224, \
-                   W_def_item_231, W_def_item_232, W_def_item_233, W_def_item_234, W_def_item_241, W_def_item_242,
-                   W_def_item_243, W_def_item_244, \
-                   W_def_item_311, W_def_item_312, W_def_item_313, W_def_item_314, W_def_item_321, W_def_item_322,
-                   W_def_item_323, W_def_item_324, \
-                   W_def_item_331, W_def_item_332, W_def_item_333, W_def_item_334, W_def_item_341, W_def_item_342,
-                   W_def_item_343, W_def_item_344, \
-                   W_def_item_411, W_def_item_412, W_def_item_413, W_def_item_414, W_def_item_421, W_def_item_422,
-                   W_def_item_423, W_def_item_424, \
-                   W_def_item_431, W_def_item_432, W_def_item_433, W_def_item_434, W_def_item_441, W_def_item_442,
-                   W_def_item_443, W_def_item_444, \
-                   W_def_item_511, W_def_item_512, W_def_item_513, W_def_item_514, W_def_item_521, W_def_item_522,
-                   W_def_item_523, W_def_item_524, \
-                   W_def_item_531, W_def_item_532, W_def_item_533, W_def_item_534, W_def_item_541, W_def_item_552,
-                   W_def_item_543, W_def_item_544]
+                    W_def_item_211, W_def_item_212, W_def_item_213, W_def_item_214, W_def_item_221, W_def_item_222, W_def_item_223, W_def_item_224,\
+                    W_def_item_231, W_def_item_232, W_def_item_233, W_def_item_234, W_def_item_241, W_def_item_242, W_def_item_243, W_def_item_244,\
+                    W_def_item_311, W_def_item_312, W_def_item_313, W_def_item_314, W_def_item_321, W_def_item_322, W_def_item_323, W_def_item_324,\
+                    W_def_item_331, W_def_item_332, W_def_item_333, W_def_item_334, W_def_item_341, W_def_item_342, W_def_item_343, W_def_item_344,\
+                    W_def_item_411, W_def_item_412, W_def_item_413, W_def_item_414, W_def_item_421, W_def_item_422, W_def_item_423, W_def_item_424,\
+                    W_def_item_431, W_def_item_432, W_def_item_433, W_def_item_434, W_def_item_441, W_def_item_442, W_def_item_443, W_def_item_444,\
+                    W_def_item_511, W_def_item_512, W_def_item_513, W_def_item_514, W_def_item_521, W_def_item_522, W_def_item_523, W_def_item_524,\
+                    W_def_item_531, W_def_item_532, W_def_item_533, W_def_item_534, W_def_item_541, W_def_item_552, W_def_item_543, W_def_item_544]
 
 W_def_item_list_1 = [W_def_item_111, W_def_item_112, W_def_item_113, W_def_item_114]
-W_def_item_list_2 = [W_def_item_211, W_def_item_212, W_def_item_213, W_def_item_214, W_def_item_221, W_def_item_222,
-                     W_def_item_223, W_def_item_224, \
-                     W_def_item_231, W_def_item_232, W_def_item_233, W_def_item_234, W_def_item_241, W_def_item_242,
-                     W_def_item_243, W_def_item_244]
-W_def_item_list_3 = [W_def_item_311, W_def_item_312, W_def_item_313, W_def_item_314, W_def_item_321, W_def_item_322,
-                     W_def_item_323, W_def_item_324, \
-                     W_def_item_331, W_def_item_332, W_def_item_333, W_def_item_334, W_def_item_341, W_def_item_342,
-                     W_def_item_343, W_def_item_344]
-W_def_item_list_4 = [W_def_item_411, W_def_item_412, W_def_item_413, W_def_item_414, W_def_item_421, W_def_item_422,
-                     W_def_item_423, W_def_item_424, \
-                     W_def_item_431, W_def_item_432, W_def_item_433, W_def_item_434, W_def_item_441, W_def_item_442,
-                     W_def_item_443, W_def_item_444]
-W_def_item_list_5 = [W_def_item_511, W_def_item_512, W_def_item_513, W_def_item_514, W_def_item_521, W_def_item_522,
-                     W_def_item_523, W_def_item_524, \
-                     W_def_item_531, W_def_item_532, W_def_item_533, W_def_item_534, W_def_item_541, W_def_item_552,
-                     W_def_item_543, W_def_item_544]
+W_def_item_list_2 = [W_def_item_211, W_def_item_212, W_def_item_213, W_def_item_214, W_def_item_221, W_def_item_222, W_def_item_223, W_def_item_224,\
+                    W_def_item_231, W_def_item_232, W_def_item_233, W_def_item_234, W_def_item_241, W_def_item_242, W_def_item_243, W_def_item_244]
+W_def_item_list_3 = [W_def_item_311, W_def_item_312, W_def_item_313, W_def_item_314, W_def_item_321, W_def_item_322, W_def_item_323, W_def_item_324,\
+                    W_def_item_331, W_def_item_332, W_def_item_333, W_def_item_334, W_def_item_341, W_def_item_342, W_def_item_343, W_def_item_344]
+W_def_item_list_4 = [W_def_item_411, W_def_item_412, W_def_item_413, W_def_item_414, W_def_item_421, W_def_item_422, W_def_item_423, W_def_item_424,\
+                    W_def_item_431, W_def_item_432, W_def_item_433, W_def_item_434, W_def_item_441, W_def_item_442, W_def_item_443, W_def_item_444]
+W_def_item_list_5 = [W_def_item_511, W_def_item_512, W_def_item_513, W_def_item_514, W_def_item_521, W_def_item_522, W_def_item_523, W_def_item_524,\
+                    W_def_item_531, W_def_item_532, W_def_item_533, W_def_item_534, W_def_item_541, W_def_item_552, W_def_item_543, W_def_item_544]
 
 re_item_list = [re_item_01, re_item_02, re_item_03, re_item_04, re_item_05]
 
@@ -580,8 +570,7 @@ nomal_item_list = [month_item_01, month_item_02, month_item_03, month_item_04, m
 
 # 몬스터 클래스
 class monster:
-    def __init__(self, name, liv, health, damage, recovery_health, drop_exp, drop_money, drop_item, drop_item_count,
-                 spawn_point):
+    def __init__(self, name, liv, health, damage, recovery_health, drop_exp, drop_money, drop_item, drop_item_count, spawn_point):
         self.name = name
         self.liv = liv
         self.health = health
@@ -595,91 +584,81 @@ class monster:
 
 
 # 1월의 기억 드랍
-nomal_monster_0001 = monster("화난닭", 0, 1, 2, 0, 0, 0, [month_item_01], 1, 66)
+nomal_monster_0001 = monster("화난닭",0,1,2,0,0,0,[month_item_01],1, )
 
-nomal_monster_0101 = monster("화난닭", 0, 1, 2, 0, 0, 0, [month_item_01], 1, 32)
-nomal_monster_0102 = monster("돌돌이", 1, 25, 8, 0, 1, 1, [month_item_01], 2, 32)
-nomal_monster_0103 = monster("돌순이", 2, 35, 20, 0, 1, 1, [month_item_01], 3, 32)
-nomal_monster_0104 = monster("돌멍이", 3, 60, 35, 5, 2, 2, [month_item_01], 4, 32)
-nomal_monster_0105 = monster("돌전사", 6, 150, 75, 7, 4, 3, [month_item_01], 5, 32)
-nomal_monster_0106 = monster("왕돌이", 6, 1500, 500, 50, 200, 200, [month_item_01], 6, 32)
+nomal_monster_0101 = monster("화난닭",0,1,2,0,0,0,[month_item_01],1, )
+nomal_monster_0102 = monster("돌돌이",1,25,8,0,1,1,[month_item_01],2, )
+nomal_monster_0103 = monster("돌순이",2,35,20,0,1,1,[month_item_01],3, )
+nomal_monster_0104 = monster("돌멍이",3,60,35,5,2,2,[month_item_01],4, )
+nomal_monster_0105 = monster("돌전사",6,150,75,7,4,3,[month_item_01],5, )
+nomal_monster_0106 = monster("왕돌이",6,1500,500,50,200,200,[month_item_01],6, )
 
-nomal_monster_0002 = monster("화난소", 0, 300, 100, 100, 15, 0, [], 0, 1)
-nomal_monster_0003 = monster("핀 그리드", 0, 15000, 2500, 4000, 3000, 1000, [R_atk_item_601], 1,
-                             1)  # 렉스의 1번째 명작 '홍염의 날개깃' 드랍 / 중복 x
+nomal_monster_0002 = monster("화난소",0,300,100,100,15,0,[],0, )
+nomal_monster_0003 = monster("핀 그리드",0,15000,2500,4000,3000,1000,[],0, ) # 렉스의 1번째 명작 '홍염의 날개깃' 드랍
 
-nomal_monster_0201 = monster("오염된 슬라임 요정", 6, 160, 60, 8, 6, 5, [month_item_01], 6, 4)
-nomal_monster_0202 = monster("오염된 뼈슬라임", 7, 200, 80, 10, 7, 5, [month_item_01], 7, 4)
-nomal_monster_0203 = monster("오염된 하늘슬라임", 8, 250, 85, 13, 8, 5, [month_item_01], 8, 4)
-nomal_monster_0204 = monster("오염된 키다리 슬라임", 8, 240, 125, 12, 7, 5, [month_item_01], 9, 4)
-nomal_monster_0205 = monster("사악한 마녀", 9, 2000, 300, 100, 250, 2000, [month_item_01], 10, 4)
+nomal_monster_0201 = monster("오염된 슬라임 요정",6,160,60,8,6,5,[month_item_01],6, )
+nomal_monster_0202 = monster("오염된 뼈슬라임",7,200,80,10,7,5,[month_item_01],7, )
+nomal_monster_0203 = monster("오염된 하늘슬라임",8,250,85,13,8,5,[month_item_01],8, )
+nomal_monster_0204 = monster("오염된 키다리 슬라임",8,240,125,12,7,5,[month_item_01],9, )
+nomal_monster_0205 = monster("사악한 마녀",9,2000,300,100,250,2000,[month_item_01],10, )
 
 # 2월의 기억 드랍
-nomal_monster_0301 = monster("어설픈 해적앵무새", 9, 260, 95, 13, 10, 7, [month_item_02], 1, 7)
-nomal_monster_0302 = monster("어설픈 해적 조무래기", 10, 280, 115, 14, 11, 7, [month_item_02], 2, 7)
-nomal_monster_0303 = monster("어설픈 해적 견습생", 11, 300, 120, 15, 12, 7, [month_item_02], 3, 7)
-nomal_monster_0304 = monster("어설픈 해적", 12, 325, 145, 16, 13, 7, [month_item_02], 4, 6)
-nomal_monster_0305 = monster("어설픈 해적선장", 13, 4000, 500, 300, 250, 4000, [month_item_02], 4, 6)
+nomal_monster_0301 = monster("어설픈 해적앵무새",9,260,95,13,10,7,[month_item_02],1, )
+nomal_monster_0302 = monster("어설픈 해적 조무래기",10,280,115,14,11,7,[month_item_02],2, )
+nomal_monster_0303 = monster("어설픈 해적 견습생",11,300,120,15,12,7,[month_item_02],3, )
+nomal_monster_0304 = monster("어설픈 해적",12,325,145,16,13,7,[month_item_02],4, )
+nomal_monster_0305 = monster("어설픈 해적선장",13,4000,500,300,250,4000,[month_item_02],4, )
 
-nomal_monster_0401 = monster("파란 위습", 13, 375, 170, 17, 15, 10, [month_item_02], 5, )
-nomal_monster_0402 = monster("초록 위습", 14, 400, 190, 18, 16, 10, [month_item_02], 6, )
+nomal_monster_0401 = monster("파란 위습",13,375,170,17,15,10,[month_item_02],5, )
+nomal_monster_0402 = monster("초록 위습",14,400,190,18,16,10,[month_item_02],6, )
 
-nomal_monster_0501 = monster("엘프 전사 견습생", 15, 450, 220, 20, 17, 12, [month_item_02], 7, 15)
-nomal_monster_0502 = monster("엘프 전사", 16, 500, 250, 22, 18, 14, [month_item_02], 8, 15)
-nomal_monster_0503 = monster("엘프 여왕", 17, 8000, 700, 500, 300, 7000, [month_item_02], 10, 15)
+nomal_monster_0501 = monster("엘프 전사 견습생",15,450,220,20,17,12,[month_item_02],7, )
+nomal_monster_0502 = monster("엘프 전사",16,500,250,22,18,14,[month_item_02],8, )
+nomal_monster_0503 = monster("엘프 여왕",17,8000,700,500,300,7000,[month_item_02],10, )
 
 # 3월의 기억 드랍
-nomal_monster_0601 = monster("감염된 여성", 18, 550, 280, 24, 20, 16, [month_item_03], 1, 10)
-nomal_monster_0602 = monster("감염된 남성", 19, 650, 300, 28, 21, 18, [month_item_03], 2, 10)
-nomal_monster_0603 = monster("거대 바이러스 골렘", 20, 10000, 1200, 800, 500, 15000, [month_item_03], 3, 10)
+nomal_monster_0601 = monster("감염된 여성",18,550,280,24,20,16,[month_item_03],1, )
+nomal_monster_0602 = monster("감염된 남성",19,650,300,28,21,18,[month_item_03],2, )
+nomal_monster_0603 = monster("거대 바이러스 골렘",20,10000,1200,800,500,15000,[month_item_03],3, )
 
-nomal_monster_0701 = monster("초보 드워프", 20, 720, 400, 40, 34, 30, [month_item_03], 5, 14)
-nomal_monster_0702 = monster("붉은 드워프", 21, 800, 450, 44, 40, 35, [month_item_03], 6, 14)
-nomal_monster_0703 = monster("땅꼬마 드워프", 22, 880, 500, 48, 46, 40, [month_item_03], 7, 14)
-nomal_monster_0704 = monster("덩치 드워프", 23, 960, 550, 52, 52, 45, [month_item_03], 8, 14)
-nomal_monster_0705 = monster("드워프 왕", 24, 15000, 1600, 1000, 800, 50, [month_item_03], 10, 14)
+nomal_monster_0701 = monster("초보 드워프",20,720,400,40,34,30,[month_item_03],5, )
+nomal_monster_0702 = monster("붉은 드워프",21,800,450,44,40,35,[month_item_03],6, )
+nomal_monster_0703 = monster("땅꼬마 드워프",22,880,500,48,46,40,[month_item_03],7, )
+nomal_monster_0704 = monster("덩치 드워프",23,960,550,52,52,45,[month_item_03],8, )
+nomal_monster_0705 = monster("드워프 왕",24,15000,1600,1000,800,50,[month_item_03],10, )
 
 # 4월의 기억 드랍
-nomal_monster_0801 = monster("인어 견습 전사", 24, 1000, 600, 60, 70, 60, [month_item_04], 1, 12)
-nomal_monster_0802 = monster("인어 전사", 25, 1100, 650, 70, 80, 70, [month_item_04], 2, 12)
-nomal_monster_0803 = monster("인어 베테랑 전사", 26, 1200, 700, 80, 90, 80, [month_item_04], 3, 12)
-nomal_monster_0804 = monster("인어 전사장", 27, 1300, 750, 90, 100, 90, [month_item_04], 4, 12)
-nomal_monster_0805 = monster("인어 대장", 28, 18000, 2000, 1200, 1000, 1000, [month_item_04], 5, 12)
+nomal_monster_0801 = monster("인어 견습 전사",24,1000,600,60,70,60,[month_item_04],1, )
+nomal_monster_0802 = monster("인어 전사",25,1100,650,70,80,70,[month_item_04],2, )
+nomal_monster_0803 = monster("인어 베테랑 전사",26,1200,700,80,90,80,[month_item_04],3, )
+nomal_monster_0804 = monster("인어 전사장",27,1300,750,90,100,90,[month_item_04],4, )
+nomal_monster_0805 = monster("인어 대장",28,18000,2000,1200,1000,1000,[month_item_04],5, )
 
-nomal_monster_0901 = monster("아기 거미", 28, 1450, 800, 100, 110, 100, [month_item_04], 6, 25)
-nomal_monster_0902 = monster("거미 전사", 29, 1600, 900, 120, 130, 110, [month_item_04], 7, 25)
-nomal_monster_0903 = monster("거미 마법사", 30, 1750, 1000, 140, 150, 120, [month_item_04], 8, 25)
-nomal_monster_0904 = monster("거미 대장", 31, 1900, 1100, 160, 170, 130, [month_item_04], 9, 25)
-nomal_monster_0905 = monster("거미 여왕", 32, 23000, 3000, 1500, 1300, 1400, [month_item_04], 10, 25)
+nomal_monster_0901 = monster("아기 거미",28,1450,800,100,110,100,[month_item_04],6, )
+nomal_monster_0902 = monster("거미 전사",29,1600,900,120,130,110,[month_item_04],7, )
+nomal_monster_0903 = monster("거미 마법사",30,1750,1000,140,150,120,[month_item_04],8, )
+nomal_monster_0904 = monster("거미 대장",31,1900,1100,160,170,130,[month_item_04],9, )
+nomal_monster_0905 = monster("거미 여왕",32,23000,3000,1500,1300,1400,[month_item_04],10, )
 
 # 5월의 기억 드랍
-nomal_monster_1001 = monster("허약한 선녀", 32, 2100, 1300, 180, 190, 150, [month_item_05], 1, 8)
-nomal_monster_1002 = monster("가녀린 선녀", 33, 2300, 1450, 210, 220, 170, [month_item_05], 2, 8)
-nomal_monster_1003 = monster("길쭉한 선녀", 34, 2500, 1600, 240, 250, 190, [month_item_05], 3, 8)
-nomal_monster_1004 = monster("키가 작은 선녀", 35, 2700, 1750, 260, 270, 210, [month_item_05], 4, 8)
-
-# 이벤트 및 특수
-special_monster_0004 = monster("인내의 돌")
+nomal_monster_1001 = monster("허약한 선녀",32,2100,1300,180,190,150,[month_item_05],1, )
+nomal_monster_1002 = monster("가녀린 선녀",33,2300,1450,210,220,170,[month_item_05],2, )
+nomal_monster_1003 = monster("길쭉한 선녀",34,2500,1600,240,250,190,[month_item_05],3, )
+nomal_monster_1004 = monster("키가 작은 선녀",35,2700,1750,260,270,210,[month_item_05],4, )
 
 monster_month_1_list = [nomal_monster_0001, nomal_monster_0002, nomal_monster_0003, \
-                        nomal_monster_0101, nomal_monster_0102, nomal_monster_0103, nomal_monster_0104,
-                        nomal_monster_0105, nomal_monster_0106, \
-                        nomal_monster_0201, nomal_monster_0202, nomal_monster_0203, nomal_monster_0204,
-                        nomal_monster_0205]
+                        nomal_monster_0101, nomal_monster_0102, nomal_monster_0103, nomal_monster_0104, nomal_monster_0105, nomal_monster_0106, \
+                        nomal_monster_0201, nomal_monster_0202, nomal_monster_0203, nomal_monster_0204, nomal_monster_0205]
 
-monster_month_2_list = [nomal_monster_0301, nomal_monster_0302, nomal_monster_0303, nomal_monster_0304,
-                        nomal_monster_0305, \
+monster_month_2_list = [nomal_monster_0301, nomal_monster_0302, nomal_monster_0303, nomal_monster_0304, nomal_monster_0305, \
                         nomal_monster_0401, nomal_monster_0402, \
                         nomal_monster_0501, nomal_monster_0502, nomal_monster_0503]
 
 monster_month_3_list = [nomal_monster_0601, nomal_monster_0602, nomal_monster_0603, \
-                        nomal_monster_0701, nomal_monster_0702, nomal_monster_0703, nomal_monster_0704,
-                        nomal_monster_0705]
+                        nomal_monster_0701, nomal_monster_0702, nomal_monster_0703, nomal_monster_0704, nomal_monster_0705]
 
-monster_month_4_list = [nomal_monster_0801, nomal_monster_0802, nomal_monster_0803, nomal_monster_0804,
-                        nomal_monster_0805, \
-                        nomal_monster_0901, nomal_monster_0902, nomal_monster_0903, nomal_monster_0904,
-                        nomal_monster_0905]
+monster_month_4_list = [nomal_monster_0801, nomal_monster_0802, nomal_monster_0803, nomal_monster_0804, nomal_monster_0805, \
+                        nomal_monster_0901, nomal_monster_0902, nomal_monster_0903, nomal_monster_0904, nomal_monster_0905]
 
 monster_month_5_list = [nomal_monster_1001, nomal_monster_1002, nomal_monster_1003, nomal_monster_1004]
 
@@ -697,7 +676,6 @@ def monster_sel(self):
         else:
             continue
 
-
 # 몬스터 프린트
 def print_mon(sel_monster):
     print("\n\n{0:=^25}".format("Lv." + str(sel_monster.liv) + "_" + sel_monster.name))
@@ -707,13 +685,12 @@ def print_mon(sel_monster):
         '공격력', sel_monster.damage))
 
 
-# 플레이어 도망
+#플레이어 도망
 def player_run(turn):
     per = choice("y" * 30 + "n" * turn + 5)
     return per
 
-
-# 공격
+#공격
 def attack(self, sel_monster, player_or_monster):
     if player_or_monster == "player":
         if len(self.equipment['atk']) == 2:
@@ -746,7 +723,6 @@ def attack(self, sel_monster, player_or_monster):
         print("{0} 데미지를 받았습니다\n".format(damage))
         return self.health
 
-
 # 몬스터 출현
 def monster_hello(move, self):
     if move == 'w' or move == 'a' or move == 's' or move == 'd':
@@ -772,7 +748,7 @@ def monster_hello(move, self):
                         ans = input("\n공격(q) 아이템(w)\n:")
                     # 공격
                     if ans == 'q':
-                        sel_monster.health = attack(self, sel_monster, 'player')
+                        sel_monster.health = attack(self,sel_monster,'player')
                         if sel_monster.health <= 0:
                             self.exp += sel_monster.drop_exp
                             self.money += sel_monster.drop_money
@@ -821,7 +797,7 @@ def monster_hello(move, self):
 
 
 # 아이템 정보 프린트
-def print_item_1(item):
+def print_item_1 (item):
     if item.use == 'atk':
         print("{0:^25}{1:^10}{2:^10}".format( \
             '이름', item.name, \
@@ -837,8 +813,7 @@ def print_item_1(item):
             '이름', item.name, \
             '체력 회복량', item.recovery)
 
-
-def print_item_2(item):
+def print_item_2 (item):
     if item.use == 'atk':
         print("{0} : {1}\n{2} : {3}\n{4} : {5}\n{6} : {7}".format( \
             '이름', item.name, \
@@ -846,48 +821,37 @@ def print_item_2(item):
             '가격', item.cost, \
             '제한레벨', item.liv))
 
-        try:
-            need_power_stats = item.need_power_stats
-        except NameError:
-            need_power_stats = 0
-        try:
-            need_agility_stats = item.need_agility_stats
-        except NameError:
-            need_agility_stats = 0
-        try:
-            need_adventure_stats = item.need_adventure_stats
-        except NameError:
-            need_adventure_stats = 0
+        need_power_stats = 0
+        need_agility_stats = 0
+        need_adventure_stats = 0
 
-        print("{0} : {1} / {2} / {3}".format( \
-            '필요스텟 (힘, 민첩, 모험)', need_power_stats, need_agility_stats, need_adventure_stats))
+        if item.need_power_stats in globals()
+            need_power_stats == item.need_power_stats
+        if item.need_agility_stats in globals()
+            need_need_agility_stats == item.need_agility_stats
+        if item.need_adventure_stats in globals()
+            need_adventure_stats == item.need_adventure_stats
 
-        try:
-            plus_power_stats = item.plus_power_stats
-        except NameError:
-            plus_power_stats = 0
-        try:
-            plus_agility_stats = item.plus_agility_stats
-        except NameError:
-            plus_agility_stats = 0
-        try:
-            plus_adventure_stats = item.plus_adventure_stats
-        except NameError:
-            plus_adventure_stats = 0
+        print("{0} : {1}/{2}/{3}").format( \
+            '필요스텟 (힘, 민첩, 모험)', need_power_stats, need_agility_stats, need_adventure_stats)
 
-        print("{0} : {1} / {2} / {3}".format( \
-            '추가스텟 (힘, 민첩, 모험)', plus_power_stats, plus_agility_stats, plus_adventure_stats))
 
-        try:
-            print("{0} : {1}".format( \
-                '크리티컬', item.critical))
-        except NameError:
-            pass
-        try:
-            print("{0} : {1}".format( \
-                '체력추가', item.physical_absorption))
-        except NameError:
-            pass
+        if item.plus_power_stats in globals()
+            plus_power_stats == item.plus_power_stats
+        if item.plus_agility_stats in globals()
+            plus_agility_stats == item.plus_agility_stats
+        if item.plus_adventure_stats in globals()
+            plus_adventure_stats == item.plus_adventure_stats
+
+        if plus_power_stats != 0 and plus_agility_stats != 0 and plus_adventure_stats != 0:
+            print("{0} : {1}/{2}/{3}").format( \
+                '추가스텟 (힘, 민첩, 모험)', plus_power_stats, plus_agility_stats, plus_adventure_stats)
+        if item.critical in globals()
+            print("{0} : {1}").format( \
+                '크리티컬', item.critical)
+        if item.physical_absorption in glonals()
+            print("{0} : {1}").format( \
+                    '체력추가', item.physical_absorption)
 
     elif item.use == 'def':
         print("{0} : {1}\n{2} : {3}\n{4} : {5}\n{6} : {7}".format( \
@@ -896,54 +860,41 @@ def print_item_2(item):
             '가격', item.cost, \
             '제한레벨', item.liv))
 
-        try:
-            need_power_stats = item.need_power_stats
-        except NameError:
-            need_power_stats = 0
-        try:
-            need_agility_stats = item.need_agility_stats
-        except NameError:
-            need_agility_stats = 0
-        try:
-            need_adventure_stats = item.need_adventure_stats
-        except NameError:
-            need_adventure_stats = 0
+        need_power_stats = 0
+        need_agility_stats = 0
+        need_adventure_stats = 0
 
-        print("{0} : {1} / {2} / {3}".format( \
-            '필요스텟 (힘, 민첩, 모험)', need_power_stats, need_agility_stats, need_adventure_stats))
+        if item.need_power_stats in globals()
+            need_power_stats == item.need_power_stats
+        if item.need_agility_stats in globals()
+            need_need_agility_stats == item.need_agility_stats
+        if item.need_adventure_stats in globals()
+            need_adventure_stats == item.need_adventure_stats
 
-        try:
-            plus_power_stats = item.plus_power_stats
-        except NameError:
-            plus_power_stats = 0
-        try:
-            plus_agility_stats = item.plus_agility_stats
-        except NameError:
-            plus_agility_stats = 0
-        try:
-            plus_adventure_stats = item.plus_adventure_stats
-        except NameError:
-            plus_adventure_stats = 0
+        print("{0} : {1}/{2}/{3}").format( \
+            '필요스텟 (힘, 민첩, 모험)', need_power_stats, need_agility_stats, need_adventure_stats)
 
-        print("{0} : {1} / {2} / {3}".format( \
-            '추가스텟 (힘, 민첩, 모험)', plus_power_stats, plus_agility_stats, plus_adventure_stats))
-        try:
-            print("{0} : {1}".format( \
-                '크리티컬', item.critical))
-        except NameError:
-            pass
-        try:
-            print("{0} : {1}".format( \
-                '체력추가', item.physical_absorption))
-        except NameError:
-            pass
+        if item.plus_power_stats in globals()
+            plus_power_stats == item.plus_power_stats
+        if item.plus_agility_stats in globals()
+            plus_agility_stats == item.plus_agility_stats
+        if item.plus_adventure_stats in globals()
+            plus_adventure_stats == item.plus_adventure_stats
 
+        if plus_power_stats != 0 and plus_agility_stats != 0 and plus_adventure_stats != 0:
+            print("{0} : {1}/{2}/{3}").format( \
+                '추가스텟 (힘, 민첩, 모험)', plus_power_stats, plus_agility_stats, plus_adventure_stats)
+        if item.critical in globals()
+            print("{0} : {1}").format( \
+                '크리티컬', item.critical)
+        if item.physical_absorption in glonals()
+            print("{0} : {1}").format( \
+                '체력추가', item.physical_absorption)
     elif item.use == 're':
         print("{0} : {1}\n{2} : {3}\n{4} : {5}".format( \
             '이름', item.name, \
             '체력회복', item.recovery, \
-            '가격', item.cost))
-
+            '가격', item.cost)
 
 # 포션 사용
 def re_use(self, use, item, ans):
@@ -951,22 +902,20 @@ def re_use(self, use, item, ans):
         print_item_2(item[ans])
         ans_1 = input("\n{0}을(를) 사용하시겟습니까? (y / n) : ".format(item[ans].name))
         if ans_1 == "y":
-            tem = qw(item[sel], use, 1)
-            if use == 're':
-                self.health += tem
-            elif use == 'food':
-                self.hunger += tem
+            tem = qw(item[sel],use,1)
+            if use == 're': self.health += tem
+            elif use == 'food': self.hunger += tem
             item[sel].count -= 1
             if item[sel].count <= 0:
                 del item[sel]
             return self
         elif sel_1 == "n":
-            break
+                break
         else:
             print("올바른 문자를 입력하세요")
 
-    # 무기 장착
-    # def equipment(self, use, item, ans):
+# 무기 장착
+# def equipment(self, use, item, ans):
     while True:
         print_item_2(item[ans])
         ans_1 = input("\n{0} 무기를 장착하시겟습니까? (y / n) : ".format(item[ans].name))
@@ -991,10 +940,9 @@ def re_use(self, use, item, ans):
                 return self
                 break
         elif ans_1 == "n":
-            break
+                break
         else:
             print("올바른 문자를 입력하세요")
-
 
 # 인벤토리
 def inventory(self):
@@ -1083,7 +1031,6 @@ def buyshop(self, count, item):
 
     return self.money, self.inven, self.equipment
 
-
 # 상점 보기
 def showshop(self):
     point = chang_9(self)
@@ -1110,9 +1057,7 @@ def showshop(self):
                         print("\n{0:=^25}".format(sel_list[sel_item].name + "정보"))
                         print_item_2(sel_list[sel_item])
                         print("=" * 26)
-                        print("\n{나의 돈 {0}, 나의 레벨 {1}}\n{나의 스텟 (힘, 민첩, 모험) : {2}/{3}/{4}\n".format(self.money, self.liv,
-                                                                                                   h_count, a_count,
-                                                                                                   c_count))
+                        print("\n{나의 돈 {0}, 나의 레벨 {1}}\n{나의 스텟 (힘, 민첩, 모험) : {2}/{3}/{4}\n".format(self.money, self.liv, h_count, a_count, c_count))
                         ans = input("구매하시겠습니까 (y / n) : ")
                         if ans == "y":
                             buyshop(self, ch, shop_item_list[use])
@@ -1130,8 +1075,9 @@ def showshop(self):
             print("올바른 문자를 입력하세요")
             continue
 
-    # 아이템별 스탯변화
-    # def reset_info(pl, item, u_d, use):
+
+# 아이템별 스탯변화
+# def reset_info(pl, item, u_d, use):
     if use == 'atk':
         if u_d == 'd':
             pl.damage -= int(item.damage + (item.damage * pl.ak / 100))
@@ -1144,7 +1090,6 @@ def showshop(self):
         elif u_d == 'u':
             pl.defense += item.defense
         return pl.defense
-
 
 # 글씨 바꾸기
 def change_1(item):
@@ -1160,8 +1105,6 @@ def change_1(item):
         return 'drop'
     elif item.use == 'item':
         return 'item'
-
-
 def change_2(word):
     if word == 'atk':
         return '무기'
@@ -1175,8 +1118,6 @@ def change_2(word):
         return '드롭'
     elif word == 'item':
         return '일반'
-
-
 def change_3(word):
     if word == 'q':
         return "atk"
@@ -1188,8 +1129,6 @@ def change_3(word):
         return "month"
     elif word == 't':
         return "item"
-
-
 def change_4(self, word):
     if word == 'atk':
         return self.damage
@@ -1197,22 +1136,16 @@ def change_4(self, word):
         return self.defense
     elif word == 're':
         return self.health
-
-
 def change_5(self, word, num):
     if word == 'atk':
         return self.equipment[word][num].damage
     elif word == 'def':
         return self.equipment[word][num].defense
-
-
 def change_6(item, word):
     if word == 'atk':
         return item.damage
     elif word == 'def':
         return item.defense
-
-
 def change_7(me, word, num):
     if num == 0:
         if word == 're':
@@ -1220,19 +1153,17 @@ def change_7(me, word, num):
     elif num == 1:
         if word == 're':
             return me.recovery
-
-
-def change_8(self):  # 구역 : 36 / 지역 : 24 / 바다   성 : 1, 2, 3, 5, 19, 22, 28, 36
+def change_8(self): # 구역 : 36 / 지역 : 24 / 바다   성 : 1, 2, 3, 5, 19, 22, 28, 36
     if self.point == 1:
-        return '에나 성'  # 성
+        return '에나 성' # 성
     elif self.point == 2:
-        return '뒤오 성'  # 성
+        return '뒤오 성' # 성
     elif self.point == 3:
-        return '트리아 성'  # 성
+        return '트리아 성' # 성
     elif self.point == 4:
         return '오염된 강'
     elif self.point == 5:
-        return '누군가의 성'  # 성
+        return '누군가의 성' # 성
     elif self.point == 6:
         return '해적소굴'
     elif self.point == 7:
@@ -1260,13 +1191,13 @@ def change_8(self):  # 구역 : 36 / 지역 : 24 / 바다   성 : 1, 2, 3, 5, 19
     elif self.point == 18:
         return '세상을 등진곳'
     elif self.point == 19:
-        return '얼음성'  # 성
+        return '얼음성' # 성
     elif self.point == 20:
         return '드워프 유적지'
     elif self.point == 21:
         return '심연의 갱도'
     elif self.point == 22:
-        return '신기루 성'  # 성
+        return '신기루 성' # 성
     elif self.point == 23:
         return '마니라 리'
     elif self.point == 24:
@@ -1278,7 +1209,7 @@ def change_8(self):  # 구역 : 36 / 지역 : 24 / 바다   성 : 1, 2, 3, 5, 19
     elif self.point == 27:
         return '숨겨진 드워프 마을'
     elif self.point == 28:
-        return '오래된 성'  # 성
+        return '오래된 성' # 성
     elif self.point == 29:
         return '바다 신전'
     elif self.point == 30:
@@ -1294,7 +1225,7 @@ def change_8(self):  # 구역 : 36 / 지역 : 24 / 바다   성 : 1, 2, 3, 5, 19
     elif self.point == 35:
         return '생기의 마을'
     elif self.point == 36:
-        return '오크의 성'  # 성
+        return '오크의 성' # 성
 
     elif self.point == 50:
         return '에나'
@@ -1325,7 +1256,7 @@ def change_8(self):  # 구역 : 36 / 지역 : 24 / 바다   성 : 1, 2, 3, 5, 19
     elif self.point == 63:
         return '물거품의 바다'
     elif self.point == 64:
-        return '고대 유적의 섬'
+        return '고대 우적의 섬'
     elif self.point == 65:
         return '개척자의 섬'
     elif self.point == 66:
@@ -1348,7 +1279,6 @@ def change_8(self):  # 구역 : 36 / 지역 : 24 / 바다   성 : 1, 2, 3, 5, 19
         return '잊혀진 섬'
     else:
         return '바다'
-
 
 # 스텟
 def level_up(self):
@@ -1413,9 +1343,9 @@ def level_up(self):
     else:
         pass
 
-
 # 레벨, 위치, 패시브 체크
 def turn_chack(self, player_x, player_y, plag):
+
     # 레벨업 체크
     level_up_count = 0
 
@@ -1676,31 +1606,31 @@ def turn_chack(self, player_x, player_y, plag):
                 self.point == 58
                 point_count += 1
         if 18 <= player_x <= 32:
-            if 65 <= player_y <= 79:
+            if  <= player_y <= :
                 self.point == 59
                 point_count += 1
         if 18 <= player_x <= 36:
-            if 46 <= player_y <= 64:
+            if  <= player_y <= :
                 self.point == 60
                 point_count += 1
         if 37 <= player_x <= 51:
-            if 41 <= player_y <= 55:
+            if  <= player_y <= :
                 self.point == 61
                 point_count += 1
         if 37 <= player_x <= 53:
-            if 56 <= player_y <= 72:
+            if  <= player_y <= :
                 self.point == 62
                 point_count += 1
         if 54 <= player_x <= 55:
-            if 58 <= player_y <= 61:
+            if  <= player_y <= :
                 self.point == 62
                 point_count += 1
         if 56 <= player_x <= 57:
-            if 60 <= player_y <= 62:
+            if  <= player_y <= :
                 self.point == 62
                 point_count += 1
         if 43 <= player_x <= 53:
-            if 30 <= player_y <= 40:
+            if  <= player_y <= :
                 self.point == 63
                 point_count += 1
         if 2 <= player_x <= 16:
@@ -1728,26 +1658,25 @@ def turn_chack(self, player_x, player_y, plag):
                 self.point == 69
                 point_count += 1
         if 6 <= player_x <= 12:
-            if 87 <= player_y <=:
+            if 87 <= player_y <= :
                 self.point == 70
                 point_count += 1
         if 8 <= player_x <= 12:
-            if 82 <= player_y <=:
+            if 82 <= player_y <= :
                 self.point == 71
                 point_count += 1
         if 47 <= player_x <= 51:
-            if 93 <= player_y <=:
+            if 93 <= player_y <= :
                 self.point == 72
                 point_count += 1
         if 47 <= player_x <= 53:
-            if 84 <= player_y <=:
+            if 84 <= player_y <= :
                 self.point == 73
                 point_count += 1
         if 43 <= player_x <= 45:
-            if 78 <= player_y <=:
+            if 78 <= player_y <= :
                 self.point == 74
                 point_count += 1
-
 
 # 게임 종료
 def game_over():
@@ -1780,7 +1709,7 @@ def main():
         while player_name == "":
             print("\n유효한 이름을 입력하십시오")
             player_name = input("플레이어 이름을 입력하십시오. = ")
-        player_1 = Player(player_name, 1.1, [], [], 60, 0, 0, 0, 0, 50, 0, 0)
+        player_1 = Player(player_name, 1.1, [], [], 60, 0, 0 ,0, 0, 50, 0, 0)
 
         player_x = 87
         player_y = 52
@@ -1800,7 +1729,7 @@ def main():
 
         print("\n" * 38)
 
-        turn_chack(self, player_x, player_y, plag)  # 레벨, 위치, 패시브
+        turn_chack(self, player_x, player_y, plag) # 레벨, 위치, 패시브
 
         # 마을 버프
         if 1 <= player_1.point <= 3 or player_1.point == 5 or player_1.point == 19 or player_1.point == 22 or player_1.point == 28 or player_1.point == 36:
@@ -1894,5 +1823,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# https://cafe.naver.com/bjcrocodile/3275675
