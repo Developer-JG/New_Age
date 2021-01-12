@@ -83,7 +83,12 @@ February
 26 rename Git Hub (0.2)
 
 May
-31 restart (New_Age (v.46)) (1)
+31 some modifications (New_Age (v.46)) (1)
+
+2021
+
+January
+12 restart (No_name (v.47)) (2)
 ```
 
 # Licence
