@@ -1,7 +1,7 @@
 # New_Age
 ### Large-scale fantasy game
 
-lastest Renewals : 2020/5/31
+lastest Renewals : 2021/1/
 
 # History
 
