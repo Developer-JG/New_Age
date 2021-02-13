@@ -1,7 +1,12 @@
 # New_Age
+
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+![python3.6](https://img.shields.io/badge/python-3.6.8-brightgreen)
+![license](https://img.shields.io/badge/license-CC--BY--NC--SA-orange)
+
 ### Large-scale fantasy game
 
-lastest Renewals : 2021/1/
+lastest Renewals : 2021/2/
 
 # History
 
